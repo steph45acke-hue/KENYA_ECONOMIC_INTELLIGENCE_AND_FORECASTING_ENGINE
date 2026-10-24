@@ -35,7 +35,7 @@ Before initiating any data cleaning or transformation pipelines, a rigorous stru
   * Identified **5 missing values** in the `exchange_rate_usd_kes` column.
   * **Critical Outlier Detected:** Summary statistics revealed a minimum exchange rate of **-15.20**, which is a physical data entry anomaly requiring null conversion and interpolation during cleaning.
 
-![CBK Verification Output](screenshots/Screenshot (305).png)
+<img src="screenshots/Screenshot%20(305).png" alt="CBK Verification Output" width="100%">
 
 ---
 
@@ -46,7 +46,7 @@ Before initiating any data cleaning or transformation pipelines, a rigorous stru
   * Identified **4 missing values** in the `cpi_index` column.
   * Establishes a clean, continuous baseline for macroeconomic price level adjustments.
 
-![KNBS CPI Verification Output](screenshots/Screenshot (306).png)
+<img src="screenshots/Screenshot%20(306).png" alt="KNBS CPI Verification Output" width="100%">
 
 ---
 
@@ -57,5 +57,5 @@ Before initiating any data cleaning or transformation pipelines, a rigorous stru
   * Identified **15 missing price records** distributed across regional groups.
   * **Critical Outlier Detected:** Maximum retail price recorded an impossible spike of **77,777.00 KES per kg**, heavily distorting the standard deviation and requiring strict boundary filtering.
 
-![Maize Market Prices Verification Output 1](screenshots/Screenshot (307).png)
-![Maize Market Prices Verification Output 2](screenshots/Screenshot (308).png)
+<img src="screenshots/Screenshot%20(307).png" alt="Maize Market Prices Verification Output 1" width="100%">
+<img src="screenshots/Screenshot%20(308).png" alt="Maize Market Prices Verification Output 2" width="100%">
