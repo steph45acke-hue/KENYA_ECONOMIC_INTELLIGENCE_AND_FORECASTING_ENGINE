@@ -21,3 +21,41 @@ In Kenya, maize is far more than just a commodity; it is the backbone of food se
 2. To what extent do macroeconomic variables (exchange rates, inflation indices, Central Bank rates) drive retail maize price volatility compared to seasonal environmental factors like localized rainfall?
 3. Do price transmission lags vary significantly between agricultural surplus regions and major urban consumer centers across Kenya?
 4. Which modeling paradigm—ranging from traditional time-series methods like SARIMA and Vector Autoregression to modern machine learning approaches—delivers the most reliable out-of-sample forecasts for Kenyan retail food prices?
+
+# Phase One A: Raw Data Audit & Structural Verification
+
+Before initiating any data cleaning or transformation pipelines, a rigorous structural audit was performed on all raw datasets to verify row counts, data types, missing value distributions, and potential anomalies.
+
+---
+
+## 1. Central Bank of Kenya (CBK) Macroeconomic Indicators
+* **File Source:** `data/raw/cbk_macro_indicators.csv`
+* **Observations:** 
+  * Contains 132 rows tracking monthly exchange rates and Central Bank Rates.
+  * Identified **5 missing values** in the `exchange_rate_usd_kes` column.
+  * **Critical Outlier Detected:** Summary statistics revealed a minimum exchange rate of **-15.20**, which is a physical data entry anomaly requiring null conversion and interpolation during cleaning.
+
+![CBK Verification Output](screenshots/Screenshot (305).png)
+
+---
+
+## 2. KNBS Consumer Price Index (CPI) Monthly Data
+* **File Source:** `data/raw/knbs_cpi_monthly.csv`
+* **Observations:**
+  * Contains 132 rows of monthly inflation and consumer price index metrics.
+  * Identified **4 missing values** in the `cpi_index` column.
+  * Establishes a clean, continuous baseline for macroeconomic price level adjustments.
+
+![KNBS CPI Verification Output](screenshots/Screenshot (306).png)
+
+---
+
+## 3. Ministry of Agriculture Retail Maize Prices
+* **File Source:** `data/raw/maize_market_prices_raw.csv`
+* **Observations:**
+  * Contains 660 rows covering 5 key regional markets: **Nairobi, Nakuru, Uasin Gishu (Eldoret), Kisumu, and Mombasa**.
+  * Identified **15 missing price records** distributed across regional groups.
+  * **Critical Outlier Detected:** Maximum retail price recorded an impossible spike of **77,777.00 KES per kg**, heavily distorting the standard deviation and requiring strict boundary filtering.
+
+![Maize Market Prices Verification Output 1](screenshots/Screenshot (307).png)
+![Maize Market Prices Verification Output 2](screenshots/Screenshot (308).png)
