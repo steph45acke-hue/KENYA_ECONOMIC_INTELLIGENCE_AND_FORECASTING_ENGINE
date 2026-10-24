@@ -20,8 +20,7 @@ In Kenya, maize is far more than just a commodity; it is the backbone of food se
 1. How can missing values and extreme multi-agency data anomalies be systematically imputed without masking underlying economic signals or distorting agricultural trends?
 2. To what extent do macroeconomic variables (exchange rates, inflation indices, Central Bank rates) drive retail maize price volatility compared to seasonal environmental factors like localized rainfall?
 3. Do price transmission lags vary significantly between agricultural surplus regions and major urban consumer centers across Kenya?
-4. Which modeling paradigm—ranging from traditional time-series methods like SARIMA and Vector Autoregression to modern machine learning approaches—delivers the most reliable out-of-sample forecasts for Kenyan retail food prices?
-
+4. Which modeling paradigm—ranging from traditional time-series methods like SARIMA and Vector Autoregression to modern machine learning approaches—delivers the most reliable out-of-sample forecasts for Kenyan retail food price
 # Phase One A: Raw Data Audit & Structural Verification
 
 Before initiating any data cleaning or transformation pipelines, a rigorous structural audit was performed on all raw datasets to verify row counts, data types, missing value distributions, and potential anomalies.
@@ -35,7 +34,7 @@ Before initiating any data cleaning or transformation pipelines, a rigorous stru
   * Identified **5 missing values** in the `exchange_rate_usd_kes` column.
   * **Critical Outlier Detected:** Summary statistics revealed a minimum exchange rate of **-15.20**, which is a physical data entry anomaly requiring null conversion and interpolation during cleaning.
 
-<img src="screenshots/Screenshot%20(305).png" alt="CBK Verification Output" width="100%">
+<img src="Screenshot%20(305).png" alt="CBK Verification Output" width="100%">
 
 ---
 
@@ -46,7 +45,7 @@ Before initiating any data cleaning or transformation pipelines, a rigorous stru
   * Identified **4 missing values** in the `cpi_index` column.
   * Establishes a clean, continuous baseline for macroeconomic price level adjustments.
 
-<img src="screenshots/Screenshot%20(306).png" alt="KNBS CPI Verification Output" width="100%">
+<img src="Screenshot%20(306).png" alt="KNBS CPI Verification Output" width="100%">
 
 ---
 
@@ -57,5 +56,5 @@ Before initiating any data cleaning or transformation pipelines, a rigorous stru
   * Identified **15 missing price records** distributed across regional groups.
   * **Critical Outlier Detected:** Maximum retail price recorded an impossible spike of **77,777.00 KES per kg**, heavily distorting the standard deviation and requiring strict boundary filtering.
 
-<img src="screenshots/Screenshot%20(307).png" alt="Maize Market Prices Verification Output 1" width="100%">
-<img src="screenshots/Screenshot%20(308).png" alt="Maize Market Prices Verification Output 2" width="100%">
+<img src="Screenshot%20(307).png" alt="Maize Market Prices Verification Output 1" width="100%">
+<img src="Screenshot%20(308).png" alt="Maize Market Prices Verification Output 2" width="100%">
