@@ -58,3 +58,38 @@ Before initiating any data cleaning or transformation pipelines, a rigorous stru
 
 <img src="Screenshot%20(307).png" alt="Maize Market Prices Verification Output 1" width="100%">
 <img src="Screenshot%20(308).png" alt="Maize Market Prices Verification Output 2" width="100%">
+
+# Phase One B: Comprehensive Data Cleaning & Transformation Pipeline
+
+Following our raw data audit, **Phase One B** establishes a rigorous, production-grade data cleaning pipeline using Python and Pandas. The objective is to systematically eliminate structural anomalies, handle missing values (`dropna` and `fillna`), cap impossible outlier spikes, and guarantee **100% data hygiene** across all macroeconomic and regional agricultural datasets.
+
+---
+
+## Key Cleaning Operations Implemented
+
+1. **Duplicate Removal & Date Standardization:**
+   * Scanned and removed duplicate rows across all datasets.
+   * Parsed raw date strings into standard chronological datetime objects, dropping rows with unrecoverable timeline errors.
+
+2. **Outlier Isolation & Correction:**
+   * **CBK Macroeconomic Data:** Converted impossible negative exchange rates (such as `-15.20`) into `NaN` values.
+   * **Maize Retail Prices:** Filtered out unrealistic price spikes (such as the `77,777 KES/kg` data entry anomaly) and negative price entries.
+
+3. **Advanced Imputation (`interpolate` & `fillna`):**
+   * Utilized **linear interpolation** backed by forward-fill (`ffill`) and backward-fill (`bfill`) to seamlessly smooth continuous monetary and index series.
+   * Applied **group-wise median imputation** grouped by county (`groupby` + `transform` + `fillna`) to impute regional maize prices based on local market trends rather than blind global averages.
+
+---
+
+## Pipeline Execution & Verification Output
+
+The cleaning script successfully processed all three core data streams (`CBK Indicators`, `KNBS CPI`, and `Regional Maize Prices`), saving the finalized, audit-verified outputs into the `data/processed/` directory with a confirmed **Final Null Count of 0**.
+
+<img src="Screenshot%20(310).png" alt="Data Cleaning Pipeline Execution Output" width="100%">
+
+---
+
+## Processed File Outputs Stored
+* **`data/processed/cbk_macro_indicators_clean.csv`**
+* **`data/processed/knbs_cpi_monthly_clean.csv`**
+* **`data/processed/maize_market_prices_clean.csv`**
