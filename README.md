@@ -93,3 +93,32 @@ The cleaning script successfully processed all three core data streams (`CBK Ind
 * **`data/processed/cbk_macro_indicators_clean.csv`**
 * **`data/processed/knbs_cpi_monthly_clean.csv`**
 * **`data/processed/maize_market_prices_clean.csv`**
+
+# Phase 1C: Macroeconomic Correlation Analysis
+
+![Macroeconomic vs. Maize Price Correlation Matrix](output1_3.png)
+
+---
+
+## Executive Summary
+In agricultural economies like Kenya, retail food prices—particularly maize—are driven by a combination of global macroeconomic shifts and domestic supply conditions. Before building predictive models, we need to evaluate how macroeconomic indicators interact with local retail prices to ensure our feature selection is grounded in sound economic theory and free from severe multicollinearity.
+
+---
+
+## Problem Statement & Analytical Objectives
+1. **Identify Primary Price Drivers:** Quantify the linear relationship between local retail maize prices (`maize_retail_price_kg`) and core macroeconomic indicators (CPI, USD/KES exchange rate, and Central Bank Rate) using Pearson correlation coefficients.
+2. **Prevent Multicollinearity:** Detect highly collinear features early in the pipeline to avoid parameter distortion and overfitting in downstream regression or time-series forecasting models.
+3. **Validate Economic Assumptions:** Ensure empirical data matches real-world market dynamics before engineering features for production pipelines.
+
+---
+
+## Key Findings & Data Insights
+
+* **Maize Prices vs. Inflation & Exchange Rates ($r = 0.68$ & $0.65$):**
+  Retail maize prices demonstrate a strong positive correlation with both the Consumer Price Index ($0.68$) and the USD/KES exchange rate ($0.65$)[cite: 3]. As the Kenyan Shilling depreciates against the US Dollar, the cost of imported agricultural inputs (fertilizer, fuel, spare parts) increases, driving up consumer prices across regional markets.
+
+* **High Collinearity Between CPI and Exchange Rate ($r = 0.99$):**
+  The CPI index and the exchange rate exhibit near-perfect collinearity ($0.99$)[cite: 3]. This reflects Kenya's structural reliance on imports, where currency shocks feed almost directly into general consumer price inflation. For modeling purposes, keeping both features directly in linear models without dimensionality reduction or regularized regression could distort feature coefficients.
+
+* **Central Bank Rate Independence ($r = 0.14$):**
+  The Central Bank Rate (CBR) shows minimal linear correlation ($0.14$) with retail maize prices[cite: 3]. This indicates that monetary policy decisions take considerable time to transmit through commercial credit channels, or that short-term food price movements are predominantly supply-driven rather than interest-rate sensitive.
