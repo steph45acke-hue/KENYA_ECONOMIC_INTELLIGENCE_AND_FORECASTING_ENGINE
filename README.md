@@ -95,8 +95,7 @@ The cleaning script successfully processed all three core data streams (`CBK Ind
 * **`data/processed/maize_market_prices_clean.csv`**
 
 # Phase 1C: Macroeconomic Correlation Analysis
-
-![Macroeconomic vs. Maize Price Correlation Matrix](output1_3.png)
+![Macroeconomic Correlation Matrix](output1.png)
 
 ---
 
