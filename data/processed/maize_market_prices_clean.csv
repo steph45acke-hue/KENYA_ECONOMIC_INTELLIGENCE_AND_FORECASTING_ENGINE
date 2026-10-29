@@ -1,0 +1,661 @@
+date,county,maize_retail_price_kg
+2015-01-01,Kisumu,41.73
+2015-01-01,Mombasa,37.19
+2015-01-01,Nairobi,43.77
+2015-01-01,Nakuru,39.53
+2015-01-01,Uasin Gishu (Eldoret),41.29
+2015-02-01,Kisumu,39.18
+2015-02-01,Mombasa,41.84
+2015-02-01,Nairobi,43.34
+2015-02-01,Nakuru,42.04
+2015-02-01,Uasin Gishu (Eldoret),42.57
+2015-03-01,Kisumu,45.13
+2015-03-01,Mombasa,44.52
+2015-03-01,Nairobi,44.94
+2015-03-01,Nakuru,45.4
+2015-03-01,Uasin Gishu (Eldoret),45.6
+2015-04-01,Kisumu,37.93
+2015-04-01,Mombasa,41.33
+2015-04-01,Nairobi,43.54
+2015-04-01,Nakuru,42.14
+2015-04-01,Uasin Gishu (Eldoret),39.12
+2015-05-01,Kisumu,47.28
+2015-05-01,Mombasa,36.28
+2015-05-01,Nairobi,41.52
+2015-05-01,Nakuru,41.31
+2015-05-01,Uasin Gishu (Eldoret),36.37
+2015-06-01,Kisumu,34.35
+2015-06-01,Mombasa,37.92
+2015-06-01,Nairobi,38.4
+2015-06-01,Nakuru,32.66
+2015-06-01,Uasin Gishu (Eldoret),35.61
+2015-07-01,Kisumu,30.03
+2015-07-01,Mombasa,30.29
+2015-07-01,Nairobi,29.38
+2015-07-01,Nakuru,36.34
+2015-07-01,Uasin Gishu (Eldoret),29.19
+2015-08-01,Kisumu,31.5
+2015-08-01,Mombasa,28.38
+2015-08-01,Nairobi,23.81
+2015-08-01,Nakuru,28.83
+2015-08-01,Uasin Gishu (Eldoret),31.98
+2015-09-01,Kisumu,25.74
+2015-09-01,Mombasa,28.65
+2015-09-01,Nairobi,24.46
+2015-09-01,Nakuru,28.2
+2015-09-01,Uasin Gishu (Eldoret),25.12
+2015-10-01,Kisumu,32.44
+2015-10-01,Mombasa,28.19
+2015-10-01,Nairobi,27.94
+2015-10-01,Nakuru,25.72
+2015-10-01,Uasin Gishu (Eldoret),26.59
+2015-11-01,Kisumu,32.11
+2015-11-01,Mombasa,31.13
+2015-11-01,Nairobi,23.31
+2015-11-01,Nakuru,32.42
+2015-11-01,Uasin Gishu (Eldoret),32.26
+2015-12-01,Kisumu,34.64
+2015-12-01,Mombasa,38.09
+2015-12-01,Nairobi,38.43
+2015-12-01,Nakuru,36.95
+2015-12-01,Uasin Gishu (Eldoret),33.83
+2016-01-01,Kisumu,40.32
+2016-01-01,Mombasa,41.45
+2016-01-01,Nairobi,35.31
+2016-01-01,Nakuru,37.49
+2016-01-01,Uasin Gishu (Eldoret),37.3
+2016-02-01,Kisumu,47.55
+2016-02-01,Mombasa,46.52
+2016-02-01,Nairobi,45.73
+2016-02-01,Nakuru,38.95
+2016-02-01,Uasin Gishu (Eldoret),40.63
+2016-03-01,Kisumu,45.69
+2016-03-01,Mombasa,46.63
+2016-03-01,Nairobi,44.5
+2016-03-01,Nakuru,45.88
+2016-03-01,Uasin Gishu (Eldoret),46.61
+2016-04-01,Kisumu,45.23
+2016-04-01,Mombasa,49.98
+2016-04-01,Nairobi,44.78
+2016-04-01,Nakuru,42.46
+2016-04-01,Uasin Gishu (Eldoret),39.85
+2016-05-01,Kisumu,42.62
+2016-05-01,Mombasa,42.23
+2016-05-01,Nairobi,39.58
+2016-05-01,Nakuru,41.78
+2016-05-01,Uasin Gishu (Eldoret),45.19
+2016-06-01,Kisumu,37.4
+2016-06-01,Mombasa,38.91
+2016-06-01,Nairobi,37.65
+2016-06-01,Nakuru,33.13
+2016-06-01,Uasin Gishu (Eldoret),34.93
+2016-07-01,Kisumu,34.56
+2016-07-01,Mombasa,36.3
+2016-07-01,Nairobi,31.58
+2016-07-01,Nakuru,28.32
+2016-07-01,Uasin Gishu (Eldoret),34.85
+2016-08-01,Kisumu,29.72
+2016-08-01,Mombasa,30.26
+2016-08-01,Nairobi,28.4
+2016-08-01,Nakuru,30.69
+2016-08-01,Uasin Gishu (Eldoret),28.18
+2016-09-01,Kisumu,28.85
+2016-09-01,Mombasa,27.09
+2016-09-01,Nairobi,26.31
+2016-09-01,Nakuru,27.95
+2016-09-01,Uasin Gishu (Eldoret),26.25
+2016-10-01,Kisumu,26.71
+2016-10-01,Mombasa,28.65
+2016-10-01,Nairobi,34.65
+2016-10-01,Nakuru,23.74
+2016-10-01,Uasin Gishu (Eldoret),30.81
+2016-11-01,Kisumu,33.89
+2016-11-01,Mombasa,31.61
+2016-11-01,Nairobi,34.1
+2016-11-01,Nakuru,37.03
+2016-11-01,Uasin Gishu (Eldoret),36.16
+2016-12-01,Kisumu,31.84
+2016-12-01,Mombasa,34.15
+2016-12-01,Nairobi,37.63
+2016-12-01,Nakuru,33.08
+2016-12-01,Uasin Gishu (Eldoret),36.26
+2017-01-01,Kisumu,43.85
+2017-01-01,Mombasa,43.95
+2017-01-01,Nairobi,40.37
+2017-01-01,Nakuru,50.72
+2017-01-01,Uasin Gishu (Eldoret),42.8
+2017-02-01,Kisumu,45.09
+2017-02-01,Mombasa,44.04
+2017-02-01,Nairobi,45.22
+2017-02-01,Nakuru,44.06
+2017-02-01,Uasin Gishu (Eldoret),48.35
+2017-03-01,Kisumu,48.12
+2017-03-01,Mombasa,47.58
+2017-03-01,Nairobi,44.04
+2017-03-01,Nakuru,48.2
+2017-03-01,Uasin Gishu (Eldoret),49.52
+2017-04-01,Kisumu,42.78
+2017-04-01,Mombasa,45.45
+2017-04-01,Nairobi,44.45
+2017-04-01,Nakuru,50.87
+2017-04-01,Uasin Gishu (Eldoret),45.81
+2017-05-01,Kisumu,36.64
+2017-05-01,Mombasa,42.88
+2017-05-01,Nairobi,39.37
+2017-05-01,Nakuru,47.44
+2017-05-01,Uasin Gishu (Eldoret),41.67
+2017-06-01,Kisumu,37.95
+2017-06-01,Mombasa,45.06
+2017-06-01,Nairobi,43.77
+2017-06-01,Nakuru,44.96
+2017-06-01,Uasin Gishu (Eldoret),39.25
+2017-07-01,Kisumu,31.86
+2017-07-01,Mombasa,33.37
+2017-07-01,Nairobi,32.73
+2017-07-01,Nakuru,30.43
+2017-07-01,Uasin Gishu (Eldoret),34.43
+2017-08-01,Kisumu,26.73
+2017-08-01,Mombasa,33.99
+2017-08-01,Nairobi,29.45
+2017-08-01,Nakuru,28.66
+2017-08-01,Uasin Gishu (Eldoret),33.01
+2017-09-01,Kisumu,33.3
+2017-09-01,Mombasa,35.7
+2017-09-01,Nairobi,27.02
+2017-09-01,Nakuru,31.68
+2017-09-01,Uasin Gishu (Eldoret),27.42
+2017-10-01,Kisumu,45.18
+2017-10-01,Mombasa,33.1
+2017-10-01,Nairobi,29.76
+2017-10-01,Nakuru,34.59
+2017-10-01,Uasin Gishu (Eldoret),32.9
+2017-11-01,Kisumu,32.61
+2017-11-01,Mombasa,32.65
+2017-11-01,Nairobi,33.52
+2017-11-01,Nakuru,34.97
+2017-11-01,Uasin Gishu (Eldoret),32.85
+2017-12-01,Kisumu,38.77
+2017-12-01,Mombasa,37.15
+2017-12-01,Nairobi,38.85
+2017-12-01,Nakuru,34.09
+2017-12-01,Uasin Gishu (Eldoret),41.72
+2018-01-01,Kisumu,44.08
+2018-01-01,Mombasa,44.26
+2018-01-01,Nairobi,43.06
+2018-01-01,Nakuru,46.49
+2018-01-01,Uasin Gishu (Eldoret),42.98
+2018-02-01,Kisumu,45.95
+2018-02-01,Mombasa,46.14
+2018-02-01,Nairobi,43.13
+2018-02-01,Nakuru,47.35
+2018-02-01,Uasin Gishu (Eldoret),45.96
+2018-03-01,Kisumu,50.99
+2018-03-01,Mombasa,46.03
+2018-03-01,Nairobi,44.46
+2018-03-01,Nakuru,48.38
+2018-03-01,Uasin Gishu (Eldoret),50.34
+2018-04-01,Kisumu,50.96
+2018-04-01,Mombasa,48.39
+2018-04-01,Nairobi,49.97
+2018-04-01,Nakuru,41.09
+2018-04-01,Uasin Gishu (Eldoret),47.97
+2018-05-01,Kisumu,42.39
+2018-05-01,Mombasa,44.34
+2018-05-01,Nairobi,44.63
+2018-05-01,Nakuru,47.39
+2018-05-01,Uasin Gishu (Eldoret),51.83
+2018-06-01,Kisumu,41.13
+2018-06-01,Mombasa,41.57
+2018-06-01,Nairobi,42.95
+2018-06-01,Nakuru,41.44
+2018-06-01,Uasin Gishu (Eldoret),36.11
+2018-07-01,Kisumu,40.85
+2018-07-01,Mombasa,40.56
+2018-07-01,Nairobi,39.34
+2018-07-01,Nakuru,42.39
+2018-07-01,Uasin Gishu (Eldoret),37.33
+2018-08-01,Kisumu,36.14
+2018-08-01,Mombasa,33.36
+2018-08-01,Nairobi,34.53
+2018-08-01,Nakuru,33.85
+2018-08-01,Uasin Gishu (Eldoret),37.46
+2018-09-01,Kisumu,35.51
+2018-09-01,Mombasa,29.44
+2018-09-01,Nairobi,29.3
+2018-09-01,Nakuru,34.7
+2018-09-01,Uasin Gishu (Eldoret),31.27
+2018-10-01,Kisumu,38.18
+2018-10-01,Mombasa,32.88
+2018-10-01,Nairobi,44.45
+2018-10-01,Nakuru,36.57
+2018-10-01,Uasin Gishu (Eldoret),31.34
+2018-11-01,Kisumu,41.06
+2018-11-01,Mombasa,39.31
+2018-11-01,Nairobi,41.2
+2018-11-01,Nakuru,31.76
+2018-11-01,Uasin Gishu (Eldoret),34.39
+2018-12-01,Kisumu,44.09
+2018-12-01,Mombasa,43.03
+2018-12-01,Nairobi,39.66
+2018-12-01,Nakuru,48.85
+2018-12-01,Uasin Gishu (Eldoret),36.16
+2019-01-01,Kisumu,47.43
+2019-01-01,Mombasa,48.56
+2019-01-01,Nairobi,48.02
+2019-01-01,Nakuru,45.71
+2019-01-01,Uasin Gishu (Eldoret),51.05
+2019-02-01,Kisumu,48.78
+2019-02-01,Mombasa,48.05
+2019-02-01,Nairobi,49.89
+2019-02-01,Nakuru,51.41
+2019-02-01,Uasin Gishu (Eldoret),48.94
+2019-03-01,Kisumu,51.31
+2019-03-01,Mombasa,53.26
+2019-03-01,Nairobi,55.12
+2019-03-01,Nakuru,52.92
+2019-03-01,Uasin Gishu (Eldoret),49.66
+2019-04-01,Kisumu,48.32
+2019-04-01,Mombasa,52.86
+2019-04-01,Nairobi,47.89
+2019-04-01,Nakuru,47.48
+2019-04-01,Uasin Gishu (Eldoret),43.56
+2019-05-01,Kisumu,41.14
+2019-05-01,Mombasa,44.91
+2019-05-01,Nairobi,50.46
+2019-05-01,Nakuru,52.54
+2019-05-01,Uasin Gishu (Eldoret),42.7
+2019-06-01,Kisumu,42.16
+2019-06-01,Mombasa,42.88
+2019-06-01,Nairobi,41.87
+2019-06-01,Nakuru,43.8
+2019-06-01,Uasin Gishu (Eldoret),47.4
+2019-07-01,Kisumu,40.07
+2019-07-01,Mombasa,45.06
+2019-07-01,Nairobi,36.92
+2019-07-01,Nakuru,45.730000000000004
+2019-07-01,Uasin Gishu (Eldoret),39.91
+2019-08-01,Kisumu,34.31
+2019-08-01,Mombasa,33.85
+2019-08-01,Nairobi,36.4
+2019-08-01,Nakuru,36.49
+2019-08-01,Uasin Gishu (Eldoret),39.57
+2019-09-01,Kisumu,34.42
+2019-09-01,Mombasa,29.88
+2019-09-01,Nairobi,36.03
+2019-09-01,Nakuru,37.29
+2019-09-01,Uasin Gishu (Eldoret),38.12
+2019-10-01,Kisumu,35.61
+2019-10-01,Mombasa,40.22
+2019-10-01,Nairobi,41.81
+2019-10-01,Nakuru,36.1
+2019-10-01,Uasin Gishu (Eldoret),33.07
+2019-11-01,Kisumu,43.07
+2019-11-01,Mombasa,42.41
+2019-11-01,Nairobi,39.96
+2019-11-01,Nakuru,41.65
+2019-11-01,Uasin Gishu (Eldoret),46.29
+2019-12-01,Kisumu,41.92
+2019-12-01,Mombasa,41.63
+2019-12-01,Nairobi,43.58
+2019-12-01,Nakuru,37.95
+2019-12-01,Uasin Gishu (Eldoret),48.85
+2020-01-01,Kisumu,53.07
+2020-01-01,Mombasa,48.66
+2020-01-01,Nairobi,53.79
+2020-01-01,Nakuru,46.76
+2020-01-01,Uasin Gishu (Eldoret),47.31
+2020-02-01,Kisumu,43.79
+2020-02-01,Mombasa,48.25
+2020-02-01,Nairobi,53.73
+2020-02-01,Nakuru,45.51
+2020-02-01,Uasin Gishu (Eldoret),41.22
+2020-03-01,Kisumu,57.04
+2020-03-01,Mombasa,53.27
+2020-03-01,Nairobi,51.07
+2020-03-01,Nakuru,45.730000000000004
+2020-03-01,Uasin Gishu (Eldoret),51.93
+2020-04-01,Kisumu,55.82
+2020-04-01,Mombasa,55.43
+2020-04-01,Nairobi,44.45
+2020-04-01,Nakuru,57.88
+2020-04-01,Uasin Gishu (Eldoret),52.64
+2020-05-01,Kisumu,51.71
+2020-05-01,Mombasa,47.37
+2020-05-01,Nairobi,46.78
+2020-05-01,Nakuru,50.88
+2020-05-01,Uasin Gishu (Eldoret),47.3
+2020-06-01,Kisumu,38.96
+2020-06-01,Mombasa,47.63
+2020-06-01,Nairobi,43.05
+2020-06-01,Nakuru,41.96
+2020-06-01,Uasin Gishu (Eldoret),44.34
+2020-07-01,Kisumu,45.18
+2020-07-01,Mombasa,42.39
+2020-07-01,Nairobi,38.45
+2020-07-01,Nakuru,48.17
+2020-07-01,Uasin Gishu (Eldoret),38.51
+2020-08-01,Kisumu,37.92
+2020-08-01,Mombasa,39.81
+2020-08-01,Nairobi,35.26
+2020-08-01,Nakuru,36.26
+2020-08-01,Uasin Gishu (Eldoret),40.84
+2020-09-01,Kisumu,29.41
+2020-09-01,Mombasa,35.55
+2020-09-01,Nairobi,38.0
+2020-09-01,Nakuru,36.36
+2020-09-01,Uasin Gishu (Eldoret),37.19
+2020-10-01,Kisumu,41.97
+2020-10-01,Mombasa,37.01
+2020-10-01,Nairobi,37.3
+2020-10-01,Nakuru,38.55
+2020-10-01,Uasin Gishu (Eldoret),40.93
+2020-11-01,Kisumu,45.33
+2020-11-01,Mombasa,35.46
+2020-11-01,Nairobi,30.57
+2020-11-01,Nakuru,42.35
+2020-11-01,Uasin Gishu (Eldoret),44.67
+2020-12-01,Kisumu,39.29
+2020-12-01,Mombasa,43.3
+2020-12-01,Nairobi,44.2
+2020-12-01,Nakuru,46.93
+2020-12-01,Uasin Gishu (Eldoret),38.48
+2021-01-01,Kisumu,51.53
+2021-01-01,Mombasa,54.49
+2021-01-01,Nairobi,49.45
+2021-01-01,Nakuru,45.730000000000004
+2021-01-01,Uasin Gishu (Eldoret),48.69
+2021-02-01,Kisumu,58.09
+2021-02-01,Mombasa,51.14
+2021-02-01,Nairobi,56.61
+2021-02-01,Nakuru,53.49
+2021-02-01,Uasin Gishu (Eldoret),52.06
+2021-03-01,Kisumu,58.69
+2021-03-01,Mombasa,52.66
+2021-03-01,Nairobi,53.31
+2021-03-01,Nakuru,57.0
+2021-03-01,Uasin Gishu (Eldoret),62.71
+2021-04-01,Kisumu,56.44
+2021-04-01,Mombasa,55.85
+2021-04-01,Nairobi,61.55
+2021-04-01,Nakuru,53.36
+2021-04-01,Uasin Gishu (Eldoret),54.38
+2021-05-01,Kisumu,43.06
+2021-05-01,Mombasa,52.21
+2021-05-01,Nairobi,55.19
+2021-05-01,Nakuru,52.74
+2021-05-01,Uasin Gishu (Eldoret),53.44
+2021-06-01,Kisumu,49.19
+2021-06-01,Mombasa,49.07
+2021-06-01,Nairobi,45.83
+2021-06-01,Nakuru,48.49
+2021-06-01,Uasin Gishu (Eldoret),41.36
+2021-07-01,Kisumu,42.35
+2021-07-01,Mombasa,39.51
+2021-07-01,Nairobi,46.45
+2021-07-01,Nakuru,45.29
+2021-07-01,Uasin Gishu (Eldoret),43.43
+2021-08-01,Kisumu,43.06
+2021-08-01,Mombasa,47.76
+2021-08-01,Nairobi,41.65
+2021-08-01,Nakuru,41.99
+2021-08-01,Uasin Gishu (Eldoret),43.01
+2021-09-01,Kisumu,39.77
+2021-09-01,Mombasa,35.35
+2021-09-01,Nairobi,39.7
+2021-09-01,Nakuru,37.67
+2021-09-01,Uasin Gishu (Eldoret),41.59
+2021-10-01,Kisumu,40.01
+2021-10-01,Mombasa,40.53
+2021-10-01,Nairobi,42.48
+2021-10-01,Nakuru,41.45
+2021-10-01,Uasin Gishu (Eldoret),41.94
+2021-11-01,Kisumu,44.92
+2021-11-01,Mombasa,42.52
+2021-11-01,Nairobi,43.16
+2021-11-01,Nakuru,44.96
+2021-11-01,Uasin Gishu (Eldoret),43.04
+2021-12-01,Kisumu,46.48
+2021-12-01,Mombasa,43.44
+2021-12-01,Nairobi,47.72
+2021-12-01,Nakuru,43.13
+2021-12-01,Uasin Gishu (Eldoret),47.18
+2022-01-01,Kisumu,52.93
+2022-01-01,Mombasa,51.89
+2022-01-01,Nairobi,55.47
+2022-01-01,Nakuru,52.18
+2022-01-01,Uasin Gishu (Eldoret),47.92
+2022-02-01,Kisumu,54.26
+2022-02-01,Mombasa,56.0
+2022-02-01,Nairobi,62.09
+2022-02-01,Nakuru,57.75
+2022-02-01,Uasin Gishu (Eldoret),53.23
+2022-03-01,Kisumu,52.18
+2022-03-01,Mombasa,55.05
+2022-03-01,Nairobi,57.75
+2022-03-01,Nakuru,62.13
+2022-03-01,Uasin Gishu (Eldoret),57.69
+2022-04-01,Kisumu,57.63
+2022-04-01,Mombasa,58.74
+2022-04-01,Nairobi,54.57
+2022-04-01,Nakuru,58.4
+2022-04-01,Uasin Gishu (Eldoret),53.78
+2022-05-01,Kisumu,50.58
+2022-05-01,Mombasa,52.52
+2022-05-01,Nairobi,46.91
+2022-05-01,Nakuru,58.32
+2022-05-01,Uasin Gishu (Eldoret),55.07
+2022-06-01,Kisumu,48.4
+2022-06-01,Mombasa,45.06
+2022-06-01,Nairobi,54.88
+2022-06-01,Nakuru,47.8
+2022-06-01,Uasin Gishu (Eldoret),50.4
+2022-07-01,Kisumu,45.86
+2022-07-01,Mombasa,40.72
+2022-07-01,Nairobi,44.21
+2022-07-01,Nakuru,45.75
+2022-07-01,Uasin Gishu (Eldoret),49.1
+2022-08-01,Kisumu,35.82
+2022-08-01,Mombasa,43.89
+2022-08-01,Nairobi,43.68
+2022-08-01,Nakuru,44.49
+2022-08-01,Uasin Gishu (Eldoret),44.95
+2022-09-01,Kisumu,35.42
+2022-09-01,Mombasa,36.54
+2022-09-01,Nairobi,46.72
+2022-09-01,Nakuru,34.02
+2022-09-01,Uasin Gishu (Eldoret),41.68
+2022-10-01,Kisumu,41.17
+2022-10-01,Mombasa,43.02
+2022-10-01,Nairobi,42.75
+2022-10-01,Nakuru,46.6
+2022-10-01,Uasin Gishu (Eldoret),44.32
+2022-11-01,Kisumu,46.36
+2022-11-01,Mombasa,46.33
+2022-11-01,Nairobi,44.42
+2022-11-01,Nakuru,39.42
+2022-11-01,Uasin Gishu (Eldoret),48.02
+2022-12-01,Kisumu,51.23
+2022-12-01,Mombasa,46.01
+2022-12-01,Nairobi,53.26
+2022-12-01,Nakuru,51.99
+2022-12-01,Uasin Gishu (Eldoret),47.48
+2023-01-01,Kisumu,50.23
+2023-01-01,Mombasa,57.67
+2023-01-01,Nairobi,56.38
+2023-01-01,Nakuru,57.06
+2023-01-01,Uasin Gishu (Eldoret),54.01
+2023-02-01,Kisumu,59.84
+2023-02-01,Mombasa,52.77
+2023-02-01,Nairobi,59.69
+2023-02-01,Nakuru,50.91
+2023-02-01,Uasin Gishu (Eldoret),57.64
+2023-03-01,Kisumu,58.26
+2023-03-01,Mombasa,59.89
+2023-03-01,Nairobi,54.43
+2023-03-01,Nakuru,52.13
+2023-03-01,Uasin Gishu (Eldoret),57.57
+2023-04-01,Kisumu,55.28
+2023-04-01,Mombasa,57.81
+2023-04-01,Nairobi,61.55
+2023-04-01,Nakuru,62.23
+2023-04-01,Uasin Gishu (Eldoret),60.98
+2023-05-01,Kisumu,53.05
+2023-05-01,Mombasa,54.64
+2023-05-01,Nairobi,56.13
+2023-05-01,Nakuru,58.64
+2023-05-01,Uasin Gishu (Eldoret),53.12
+2023-06-01,Kisumu,53.41
+2023-06-01,Mombasa,47.47
+2023-06-01,Nairobi,46.89
+2023-06-01,Nakuru,48.36
+2023-06-01,Uasin Gishu (Eldoret),54.75
+2023-07-01,Kisumu,47.82
+2023-07-01,Mombasa,44.19
+2023-07-01,Nairobi,44.45
+2023-07-01,Nakuru,44.35
+2023-07-01,Uasin Gishu (Eldoret),45.9
+2023-08-01,Kisumu,44.22
+2023-08-01,Mombasa,48.93
+2023-08-01,Nairobi,37.88
+2023-08-01,Nakuru,45.730000000000004
+2023-08-01,Uasin Gishu (Eldoret),45.49
+2023-09-01,Kisumu,43.73
+2023-09-01,Mombasa,46.65
+2023-09-01,Nairobi,50.03
+2023-09-01,Nakuru,42.96
+2023-09-01,Uasin Gishu (Eldoret),43.5
+2023-10-01,Kisumu,46.86
+2023-10-01,Mombasa,46.3
+2023-10-01,Nairobi,40.77
+2023-10-01,Nakuru,47.23
+2023-10-01,Uasin Gishu (Eldoret),41.14
+2023-11-01,Kisumu,46.71
+2023-11-01,Mombasa,49.82
+2023-11-01,Nairobi,51.84
+2023-11-01,Nakuru,48.44
+2023-11-01,Uasin Gishu (Eldoret),46.94
+2023-12-01,Kisumu,51.16
+2023-12-01,Mombasa,53.54
+2023-12-01,Nairobi,48.56
+2023-12-01,Nakuru,45.730000000000004
+2023-12-01,Uasin Gishu (Eldoret),52.0
+2024-01-01,Kisumu,60.41
+2024-01-01,Mombasa,56.03
+2024-01-01,Nairobi,58.68
+2024-01-01,Nakuru,59.91
+2024-01-01,Uasin Gishu (Eldoret),56.81
+2024-02-01,Kisumu,58.93
+2024-02-01,Mombasa,60.07
+2024-02-01,Nairobi,57.19
+2024-02-01,Nakuru,62.09
+2024-02-01,Uasin Gishu (Eldoret),55.9
+2024-03-01,Kisumu,62.85
+2024-03-01,Mombasa,56.58
+2024-03-01,Nairobi,63.99
+2024-03-01,Nakuru,59.94
+2024-03-01,Uasin Gishu (Eldoret),66.1
+2024-04-01,Kisumu,58.42
+2024-04-01,Mombasa,59.66
+2024-04-01,Nairobi,59.22
+2024-04-01,Nakuru,58.65
+2024-04-01,Uasin Gishu (Eldoret),60.19
+2024-05-01,Kisumu,55.75
+2024-05-01,Mombasa,60.55
+2024-05-01,Nairobi,58.4
+2024-05-01,Nakuru,56.84
+2024-05-01,Uasin Gishu (Eldoret),54.62
+2024-06-01,Kisumu,52.69
+2024-06-01,Mombasa,51.02
+2024-06-01,Nairobi,53.05
+2024-06-01,Nakuru,58.52
+2024-06-01,Uasin Gishu (Eldoret),57.86
+2024-07-01,Kisumu,50.55
+2024-07-01,Mombasa,52.07
+2024-07-01,Nairobi,44.9
+2024-07-01,Nakuru,47.78
+2024-07-01,Uasin Gishu (Eldoret),50.85
+2024-08-01,Kisumu,49.65
+2024-08-01,Mombasa,46.35
+2024-08-01,Nairobi,47.58
+2024-08-01,Nakuru,46.85
+2024-08-01,Uasin Gishu (Eldoret),42.47
+2024-09-01,Kisumu,45.29
+2024-09-01,Mombasa,40.84
+2024-09-01,Nairobi,43.49
+2024-09-01,Nakuru,45.730000000000004
+2024-09-01,Uasin Gishu (Eldoret),41.87
+2024-10-01,Kisumu,41.57
+2024-10-01,Mombasa,42.75
+2024-10-01,Nairobi,49.21
+2024-10-01,Nakuru,48.1
+2024-10-01,Uasin Gishu (Eldoret),45.4
+2024-11-01,Kisumu,50.89
+2024-11-01,Mombasa,51.76
+2024-11-01,Nairobi,48.29
+2024-11-01,Nakuru,55.77
+2024-11-01,Uasin Gishu (Eldoret),49.89
+2024-12-01,Kisumu,60.36
+2024-12-01,Mombasa,54.66
+2024-12-01,Nairobi,44.45
+2024-12-01,Nakuru,50.2
+2024-12-01,Uasin Gishu (Eldoret),54.87
+2025-01-01,Kisumu,59.33
+2025-01-01,Mombasa,59.31
+2025-01-01,Nairobi,44.45
+2025-01-01,Nakuru,68.52
+2025-01-01,Uasin Gishu (Eldoret),61.85
+2025-02-01,Kisumu,56.8
+2025-02-01,Mombasa,61.11
+2025-02-01,Nairobi,69.07
+2025-02-01,Nakuru,62.47
+2025-02-01,Uasin Gishu (Eldoret),63.55
+2025-03-01,Kisumu,63.51
+2025-03-01,Mombasa,63.63
+2025-03-01,Nairobi,65.36
+2025-03-01,Nakuru,55.28
+2025-03-01,Uasin Gishu (Eldoret),67.04
+2025-04-01,Kisumu,61.92
+2025-04-01,Mombasa,64.57
+2025-04-01,Nairobi,61.07
+2025-04-01,Nakuru,60.77
+2025-04-01,Uasin Gishu (Eldoret),62.31
+2025-05-01,Kisumu,58.74
+2025-05-01,Mombasa,45.06
+2025-05-01,Nairobi,57.88
+2025-05-01,Nakuru,62.99
+2025-05-01,Uasin Gishu (Eldoret),56.72
+2025-06-01,Kisumu,57.84
+2025-06-01,Mombasa,59.57
+2025-06-01,Nairobi,52.54
+2025-06-01,Nakuru,61.0
+2025-06-01,Uasin Gishu (Eldoret),54.99
+2025-07-01,Kisumu,55.13
+2025-07-01,Mombasa,52.12
+2025-07-01,Nairobi,49.12
+2025-07-01,Nakuru,53.15
+2025-07-01,Uasin Gishu (Eldoret),50.79
+2025-08-01,Kisumu,50.12
+2025-08-01,Mombasa,47.56
+2025-08-01,Nairobi,47.25
+2025-08-01,Nakuru,52.77
+2025-08-01,Uasin Gishu (Eldoret),40.34
+2025-09-01,Kisumu,46.6
+2025-09-01,Mombasa,47.44
+2025-09-01,Nairobi,52.89
+2025-09-01,Nakuru,43.47
+2025-09-01,Uasin Gishu (Eldoret),45.32
+2025-10-01,Kisumu,51.45
+2025-10-01,Mombasa,49.64
+2025-10-01,Nairobi,47.48
+2025-10-01,Nakuru,46.03
+2025-10-01,Uasin Gishu (Eldoret),49.01
+2025-11-01,Kisumu,46.52
+2025-11-01,Mombasa,52.55
+2025-11-01,Nairobi,47.32
+2025-11-01,Nakuru,45.96
+2025-11-01,Uasin Gishu (Eldoret),49.73
+2025-12-01,Kisumu,52.85
+2025-12-01,Mombasa,58.92
+2025-12-01,Nairobi,55.12
+2025-12-01,Nakuru,53.18
+2025-12-01,Uasin Gishu (Eldoret),53.06
