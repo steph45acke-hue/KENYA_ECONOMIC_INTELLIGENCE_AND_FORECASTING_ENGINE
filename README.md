@@ -175,3 +175,23 @@ The objectives of this distribution analysis are to:
 
 * **Isolation of Severe Outliers & High-Price Caps:**
   Whiskers capture normal market fluctuations ranging from around 23–27 KES/kg on the low end to 63–68 KES/kg on the high end[cite: 6]. A single statistical outlier is identified in Nairobi approaching 69 KES/kg[cite: 6]. Because this point corresponds to verified historical drought and inflation shocks rather than an impossible data-entry glitch, it is safely retained to allow predictive models to generalize under severe market crisis scenarios[cite: 6].
+
+  ## Phase 2A: Advanced SQL Time-Series Feature Engineering & Window Analytics
+
+### 💡 The Problem We Solved
+When dealing with macroeconomic data and retail market prices, raw figures alone (like a monthly interest rate or a maize price in Nairobi) only tell half the story. To build a true economic intelligence engine, we needed a way to automatically compute **Year-over-Year (YoY) growth rates** and **smoothed rolling averages** across years of historical data without writing messy, slow loops in Python. 
+
+### 🚀 The Solution
+We leveraged the high-performance capabilities of our MySQL database engine by writing advanced **SQL Window Functions** (`LAG()` and rolling `AVG()`):
+* **`LAG(eo.value, 12)`** looks backward across exact 12-month partitions to fetch previous historical values for seasonal comparisons.
+* **`ROWS BETWEEN 2 PRECEDING AND CURRENT ROW`** calculates dynamic 3-month moving averages to filter out short-term market volatility.
+* **Partitioning by `series_id`** ensures that computations never bleed across different economic indicators.
+
+### 📊 Execution & Output Analysis
+Executing this query directly inside the database successfully computed and retrieved **528 rows** of clean, interview-grade analytical features. 
+
+**Interpreting the Output:**
+* **`current_value` vs `rolling_3m_avg`**: Notice how the 3-month moving average smooths out abrupt rate shifts (e.g., blending the drop from 11.0% down to 9.5% into a steady trend of `10.25` and `10.00`).
+* **`value_12m_ago`**: Correctly returns `NaN` for early 2015 entries because historical data prior to 2015 is outside our initial window, proving that our `LAG(..., 12)` partition boundaries are strictly respecting historical time gaps without hallucinating data.
+
+![Phase 2A Analytics Output Execution](./Screenshot%20(315).png)
