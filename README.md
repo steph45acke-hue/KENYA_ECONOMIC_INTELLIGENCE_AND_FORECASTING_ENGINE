@@ -195,3 +195,28 @@ Executing this query directly inside the database successfully computed and retr
 * **`value_12m_ago`**: Correctly returns `NaN` for early 2015 entries because historical data prior to 2015 is outside our initial window, proving that our `LAG(..., 12)` partition boundaries are strictly respecting historical time gaps without hallucinating data.
 
 ![Phase 2A Analytics Output Execution](./Screenshot%20(315).png)
+
+## Phase 2B: Regional Market Risk & Economic Volatility Analysis
+
+### 💡 The Problem We Solved
+When analyzing macroeconomic indicators and retail market commodities, standard deviation alone is misleading. Comparing the price fluctuation of a high-value index (like the CPI Index with a mean of 209) against a lower-value retail commodity (like Maize at 44.9) makes absolute variance incomparable. To build a true risk-profiling engine, we needed a normalized statistical metric to rank economic instability objectively across entirely different scales.
+
+### 🚀 The Solution: SQL-Powered Coefficient of Variation (CV)
+We engineered an advanced SQL aggregation query combining `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, and mathematical division to calculate the **Coefficient of Variation ($\text{CV} = \frac{\text{StdDev}}{\text{Mean}} \times 100$)** directly within MySQL:
+* **Relational Joins**: Dynamically mapped normalized foreign keys from `economic_observations` to the `series` dimension table.
+* **Risk Normalization**: Expressing standard deviation as a percentage of the mean allows us to accurately compare price volatility across completely different economic units (inflation indices, currency exchange rates, interest rates, and retail food prices).
+* **Automated Ranking**: Grouped historical observations and sorted descending to instantly bubble the highest-risk economic indicators to the top.
+
+---
+
+### 📊 Execution & Output Analysis
+
+Executing the query against our relational database successfully profiled all **4 core macroeconomic series**, returning a clean, structured DataFrame of risk metrics.
+
+**Interpreting the Output:**
+1. **`MAIZE_RETAIL_PRICE_KG` (Maize Retail Price)**: Exhibits the highest relative volatility at **19.89% CV**, driven by seasonal agricultural cycles, structural supply bottlenecks, and regional transport shifts between a low of 25.12 and a peak of 67.04.
+2. **`CPI_INDEX` (Consumer Price Index)**: Ranks second with a **16.39% CV**, reflecting broader inflationary pressures and cost-of-living adjustments across the broader economy.
+3. **`CENTRAL_BANK_RATE` (Central Bank Rate)**: Shows moderate stability at an **11.81% CV**, reflecting controlled monetary policy adjustments ranging between 9.50 and 13.00.
+4. **`EXCHANGE_RATE_USD_KES` (USD/KES Exchange Rate)**: Demonstrates the lowest relative volatility (**8.00% CV**) among the tracked metrics, maintaining a tight relative spread relative to its long-term mean.
+
+![Phase 2B Volatility and Spread Analysis Output](./Screenshot%20(316).png)
