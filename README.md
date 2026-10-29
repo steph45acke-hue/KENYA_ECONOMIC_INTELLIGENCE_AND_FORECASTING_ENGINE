@@ -220,3 +220,27 @@ Executing the query against our relational database successfully profiled all **
 4. **`EXCHANGE_RATE_USD_KES` (USD/KES Exchange Rate)**: Demonstrates the lowest relative volatility (**8.00% CV**) among the tracked metrics, maintaining a tight relative spread relative to its long-term mean.
 
 ![Phase 2B Volatility and Spread Analysis Output](./Screenshot%20(316).png)
+
+## Phase 2C: Macroeconomic Seasonality & Lean-Season Identification
+
+### 💡 The Problem We Solved
+Agricultural commodity markets are heavily bound by natural weather patterns, planting cycles, and harvest seasons. Raw historical tables show a continuous stream of monthly prices over years, making it impossible to see structural yearly trends at a glance. To build an accurate forecasting engine, we needed to isolate multi-year agricultural cycles to pinpoint exactly when structural supply crunches (lean seasons) occur versus when bumper harvests flood the market.
+
+### 🚀 The Solution: Calendar-Driven SQL Aggregation & Chronological Sorting
+We engineered a specialized SQL query utilizing date extraction and multi-column grouping to aggregate long-term historical trends into a clean 12-month agricultural cycle:
+* **Date Metadata Extraction**: Leveraged `MONTHNAME()` to extract human-readable month strings and `MONTH()` to extract numeric calendar months (`1` through `12`), preventing alphabetical sorting bugs (where "April" would incorrectly sort before "January").
+* **Multi-Year Rollups**: Grouped observation data across multiple years by matching calendar months, smoothing out single-year weather anomalies to reveal structural agricultural price behavior.
+* **Chronological Ordering**: Sorted output strictly by `month_num ASC` to present a coherent, end-to-end annual timeline of market fluctuations.
+
+---
+
+### 📊 Execution & Output Analysis
+
+Executing the query retrieved a complete **12-month rolling agricultural price profile**, successfully charting the structural supply and demand curve for retail maize across the year.
+
+**Interpreting the Output:**
+1. **The Lean Season Peak (March – April)**: Prices climb steadily from the start of the year, hitting an annual peak in **March (KES 54.98)** and remaining elevated through **April (KES 50.96)**. This accurately mirrors the structural "lean season" in East Africa where granaries deplete just before the green harvest.
+2. **The Harvest Slump (August – September)**: Following the main harvest season, prices experience a sharp downward correction, bottoming out at **KES 38.85 in August** and **KES 36.30 in September** due to market oversupply.
+3. **Post-Harvest Stabilization**: Prices begin a gradual upward recovery in the final quarter (October through December) as inventories normalize heading into the next planting cycle.
+
+![Phase 2C Seasonality and Lean-Season Output](./Screenshot%20(317).png)
