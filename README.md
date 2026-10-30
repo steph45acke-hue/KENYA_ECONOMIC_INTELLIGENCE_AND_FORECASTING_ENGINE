@@ -268,3 +268,31 @@ Executing the query against our relational database successfully scanned all his
 3. **March 2024 Spike (`66.10` KES)**: Highlights recurring structural price behavior during the same calendar window in the prior year, proving that these extreme market spikes follow a predictable annual cycle rather than random noise.
 
 ![Phase 2D Macroeconomic Outlier Detection Output](./Screenshot%20(318).png)
+
+## Phase 2E: Visualizing Macroeconomic Seasonality & Price Dynamics
+
+### 💡 The Problem We Solved
+While our SQL aggregations calculated precise monthly averages, raw tabular numbers fail to instantly communicate cyclical economic trends to stakeholders. To build a truly production-grade forecasting engine, we needed to translate our 12-month historical database aggregates into a clean, intuitive visual curve. This allows us to instantly spot structural market inflection points—such as when consumer prices peak due to scarcity versus when they plummet due to harvest oversupply.
+
+### 🚀 The Data Science Approach
+Using Python (`Matplotlib` and `Seaborn`), we transformed our database query results into an annualized time-series line plot. We enforced strict chronological sorting from January to December and applied custom marker nodes and grid lines to make the price fluctuations immediately scannable for any reviewer or hiring manager.
+
+---
+
+### 📊 Visualizing the Output: Reading the Price Curve
+
+The generated line plot clearly maps out the complete 12-month agricultural retail price cycle for maize, revealing distinct macroeconomic phases:
+
+1. **The Lean Season Peak (March — KES 55.00)**: 
+   The curve climbs steadily from January, culminating in a sharp peak at **KES 55.00 per kg** in March. This visually captures the classic East African "lean season," where local grain reserves are heavily depleted right before the early green harvests arrive.
+   
+2. **The Post-Lean Stabilization (April — May)**: 
+   Prices begin a steady downward correction as early supplies trickle in, dropping from **KES 51.00** in April down toward **KES 48.90** in May.
+
+3. **The Harvest Slump & Oversupply Trough (August — September)**: 
+   As the main harvest floods regional markets, prices tumble drastically, bottoming out at **KES 38.88 in August** and hitting an annual low of **KES 36.30 in September**. This represents a massive **KES 18.70 spread** between the peak lean season and the harvest low.
+
+4. **Fourth-Quarter Recovery (October — December)**: 
+   As market inventories normalize heading into the end of the year, prices systematically recover, climbing back toward **KES 44.54** by December to restart the cycle.
+
+![Macroeconomic Seasonality Curve](./output%204.png)
