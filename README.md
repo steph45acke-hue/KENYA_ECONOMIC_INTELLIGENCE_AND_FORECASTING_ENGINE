@@ -244,3 +244,27 @@ Executing the query retrieved a complete **12-month rolling agricultural price p
 3. **Post-Harvest Stabilization**: Prices begin a gradual upward recovery in the final quarter (October through December) as inventories normalize heading into the next planting cycle.
 
 ![Phase 2C Seasonality and Lean-Season Output](./Screenshot%20(317).png)
+
+## Phase 2D: Macroeconomic Outlier & Anomaly Detection
+
+### 💡 The Problem We Solved
+In economic forecasting, raw time-series data is frequently distorted by severe price shocks, market anomalies, or structural disruptions (such as extreme droughts or sudden inflationary spikes). Standard filtering cannot catch these because different indicators operate on completely unique baselines and units. To build a robust forecasting engine, we needed an automated, statistically rigorous way to isolate extreme outlier events across disparate economic series without hardcoding static thresholds.
+
+### 🚀 The Solution: Dynamic Correlated Subquery with Statistical Thresholds
+We engineered an advanced SQL query featuring a **correlated subquery** that calculates statistical boundaries dynamically on the fly:
+* **Dynamic Standard Deviation Filtering**: Instead of a global cutoff, the inner query computes the mean ($\mu$) and standard deviation ($\sigma$) *specifically* for each individual economic series using `WHERE eo2.series_id = eo.series_id`.
+* **Two-Sigma Rule ($\mu + 2\sigma$)**: Automatically flags any observation whose value exceeds the historical mean plus two standard deviations, capturing the top statistical tail of market volatility (extreme price spikes).
+* **Chronological Accountability**: Retrieves the precise observation month, series code, value, and data quality flag, then sorts the results in descending order (`ORDER BY eo.observation_month DESC`) to surface the most recent market shocks instantly.
+
+---
+
+### 📊 Execution & Output Analysis
+
+Executing the query against our relational database successfully scanned all historical observations, surfacing **3 extreme anomalous records** that breached the two-sigma threshold.
+
+**Interpreting the Output:**
+1. **March 2025 Spike (`67.04` KES)**: Identified as the most extreme upward price deviation on record for maize retail prices, heavily driven by seasonal deficit pressures.
+2. **February 2025 High (`63.55` KES)**: Captured immediately preceding the March peak, reflecting the height of the pre-harvest lean season crunch.
+3. **March 2024 Spike (`66.10` KES)**: Highlights recurring structural price behavior during the same calendar window in the prior year, proving that these extreme market spikes follow a predictable annual cycle rather than random noise.
+
+![Phase 2D Macroeconomic Outlier Detection Output](./Screenshot%20(318).png)
