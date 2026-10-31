@@ -274,8 +274,6 @@ Executing the query against our relational database successfully scanned all his
 ### 💡 The Problem We Solved
 While our SQL aggregations calculated precise monthly averages, raw tabular numbers fail to instantly communicate cyclical economic trends to stakeholders. To build a truly production-grade forecasting engine, we needed to translate our 12-month historical database aggregates into a clean, intuitive visual curve. This allows us to instantly spot structural market inflection points—such as when consumer prices peak due to scarcity versus when they plummet due to harvest oversupply.
 
-### 🚀 The Data Science Approach
-Using Python (`Matplotlib` and `Seaborn`), we transformed our database query results into an annualized time-series line plot. We enforced strict chronological sorting from January to December and applied custom marker nodes and grid lines to make the price fluctuations immediately scannable for any reviewer or hiring manager.
 
 ---
 
@@ -302,10 +300,7 @@ The generated line plot clearly maps out the complete 12-month agricultural reta
 ### 💡 The Problem We Solved
 In macroeconomic analysis, comparing the absolute standard deviation of different economic indicators is misleading. For instance, a 5-unit price shift in retail maize is massive, whereas a 5-unit shift in an exchange rate or index means something completely different. To evaluate risk across disparate units and scales, we needed a normalized metric: the **Coefficient of Variation (CV %)**. This allows us to accurately rank which economic drivers experience the most volatile relative dispersion versus which ones remain structurally stable.
 
-### 🚀 The Data Science Approach
-Using Python (`Seaborn` and `Matplotlib`), we transformed our SQL volatility rankings into a horizontal bar plot with a reversed blue gradient (`Blues_r`). This design instinctively draws the recruiter's eye to the most volatile indicators at the top, while programmatically generated data labels display precise CV percentages right on each bar.
 
----
 
 ### 📊 Visualizing the Output: Reading the Volatility Ranking
 
