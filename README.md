@@ -296,3 +296,31 @@ The generated line plot clearly maps out the complete 12-month agricultural reta
    As market inventories normalize heading into the end of the year, prices systematically recover, climbing back toward **KES 44.54** by December to restart the cycle.
 
 ![Macroeconomic Seasonality Curve](./output%204.png)
+
+## Phase 2F: Macroeconomic Volatility Ranking & Dispersion Analysis
+
+### 💡 The Problem We Solved
+In macroeconomic analysis, comparing the absolute standard deviation of different economic indicators is misleading. For instance, a 5-unit price shift in retail maize is massive, whereas a 5-unit shift in an exchange rate or index means something completely different. To evaluate risk across disparate units and scales, we needed a normalized metric: the **Coefficient of Variation (CV %)**. This allows us to accurately rank which economic drivers experience the most volatile relative dispersion versus which ones remain structurally stable.
+
+### 🚀 The Data Science Approach
+Using Python (`Seaborn` and `Matplotlib`), we transformed our SQL volatility rankings into a horizontal bar plot with a reversed blue gradient (`Blues_r`). This design instinctively draws the recruiter's eye to the most volatile indicators at the top, while programmatically generated data labels display precise CV percentages right on each bar.
+
+---
+
+### 📊 Visualizing the Output: Reading the Volatility Ranking
+
+The horizontal bar chart provides an instant, risk-ranked hierarchy of our macroeconomic indicators:
+
+1. **Maize Retail Price Kg (19.9% CV)**: 
+   Ranked as the **most volatile** economic series in the engine, registering a high Coefficient of Variation of **19.9%**. This confirms that staple food prices are exceptionally sensitive to external shocks, seasonal droughts, and supply chain disruptions compared to macroeconomic monetary indicators.
+   
+2. **CPI Index (~16.4% CV)**: 
+   Positions second, reflecting broader economy-wide consumer price inflation shifts over time as aggregate price levels adjust across consumer baskets.
+
+3. **Central Bank Rate (~11.8% CV)**: 
+   Demonstrates moderate relative dispersion, capturing monetary policy adjustments deployed by regulators to manage macroeconomic stability and inflation.
+
+4. **Exchange Rate USD/KES (~7.9% CV)**: 
+   Ranked as the **least volatile** indicator relative to its historical mean in this dataset, showing relatively tighter institutional bounds over the observed timeframe.
+
+![Macroeconomic Volatility Ranking Chart](./output%205.png)
