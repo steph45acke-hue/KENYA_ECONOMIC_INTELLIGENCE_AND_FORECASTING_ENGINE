@@ -319,3 +319,25 @@ The horizontal bar chart provides an instant, risk-ranked hierarchy of our macro
    Ranked as the **least volatile** indicator relative to its historical mean in this dataset, showing relatively tighter institutional bounds over the observed timeframe.
 
 ![Macroeconomic Volatility Ranking Chart](./output%205.png)
+
+## Phase 2G: Macroeconomic Anomaly Detection & Two-Sigma Outlier Analysis
+
+### 💡 The Problem We Solved
+In real-world economic and agricultural time-series data, raw figures can occasionally experience severe, unpredictable shocks—such as severe droughts, supply chain bottlenecks, or extreme inflation spikes. To build a robust forecasting engine, we needed an automated mechanism to mathematically separate standard cyclical fluctuations from abnormal market anomalies without relying on manual inspection. 
+
+---
+
+### 📊 Visualizing the Output: Reading the Anomaly Scatter Plot
+
+The chronological scatter plot maps retail maize prices from 2015 through 2026, offering clear insights into data quality and market stability:
+
+1. **The Normal Baseline Trend (Blue Markers)**: 
+   The vast majority of monthly price observations cluster densely between **KES 25 and KES 60 per Kg**, smoothly tracking historical seasonal and annual fluctuations over the decade.
+   
+2. **Identification of Extreme Two-Sigma Spikes (Red Markers)**: 
+   The algorithm successfully isolated critical market anomalies situated in the upper tail of the distribution (crossing above the $\mu + 2\sigma$ threshold). These red-highlighted points pin down abnormal price escalation periods occurring predominantly in late 2024 and 2025, where retail prices surged past **KES 65 to over KES 68 per Kg**.
+
+3. **Risk Management & Data Quality Assurance**: 
+   By programmatically flagging these outliers, the forecasting engine ensures that downstream machine learning models do not mistake structural market crises for normal cyclical behavior, ensuring cleaner predictive modeling and robust economic intelligence.
+
+![Macroeconomic Anomaly Detection Scatter Plot](./output%206.png)
