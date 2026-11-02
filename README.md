@@ -391,3 +391,25 @@ As shown in the output chart below, the time-series analysis of maize retail pri
    Noticeable structural breaks occur post-2020, where the magnitude of price spikes intensified significantly—breaking past **KES 60/Kg** in 2021, 2023, and peaking near **KES 68/Kg** in 2024–2025. This captures broader macroeconomic cost pressures and regional supply shocks over recent years.
 
 ![Temporal Trend Analysis Output](./output_temporal_trend.png)
+
+## Phase 3C: Time-Series Properties & Autocorrelation Diagnostics (ACF)
+
+### 💡 The Problem We Solved
+Time-series economic data is inherently sequential; observations in one month are heavily dependent on previous months due to momentum, supply chain lags, and structural inertia. If a forecasting model treats each monthly data point as independent, it violates core statistical assumptions, leading to biased estimates, unmodeled error terms, and poor predictive performance.
+
+
+
+### 📊 Reading the Autocorrelation Function (ACF) Output
+
+As shown in the output plot below, the ACF diagnostic reveals critical structural dynamics of the retail price series:
+
+1. **Slow Decaying Persistence (Non-Stationarity Signal)**: 
+   The autocorrelation coefficients start at 1.0 for Lag 0 and maintain high, statistically significant positive values across the first several lags. This slow, gradual decay indicates strong temporal persistence and confirms that the series possesses non-stationary properties (trending behavior).
+   
+2. **Clear 12-Month Seasonal Re-emergence**: 
+   A prominent secondary wave and peak appear around **Lag 12**, where correlation rises sharply again. This provides mathematical confirmation of a strong annual (12-month) agricultural harvest cycle, proving that prices share a high degree of structural memory with the exact same month from the previous year.
+
+3. **Significance Thresholds (Confidence Intervals)**: 
+   The shaded blue cone represents the 95% confidence interval bounds. Lags that extend well beyond this cone (particularly Lags 1 through 4, and Lag 11-13) confirm statistically meaningful relationships that must be explicitly incorporated into our forecasting and feature-engineering architectures.
+
+![Autocorrelation Function (ACF) Output](./output_acf_plot.png)
