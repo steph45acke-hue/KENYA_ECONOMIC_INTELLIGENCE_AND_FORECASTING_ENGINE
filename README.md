@@ -372,3 +372,27 @@ As shown in the output below for our core agricultural indicator (`MAIZE_RETAIL_
    A low skewness value close to zero confirms that the distribution adheres closely to a normal, unskewed bell curve.
 
 ![Univariate Statistical Profiling Output](./Screenshot%20(320).png)
+## Phase 4B: Temporal Trend & Time-Series Level Analysis
+
+### 💡 The Problem We Solved
+Economic and agricultural commodities are rarely static; they experience continuous shifts driven by underlying macroeconomic trends, inflationary pressures, and multi-year supply cycles. Without visualizing the actual price levels over a continuous multi-year timeline, it is impossible to identify persistent periods of structural increase, baseline drift, or multi-year volatility shifts.
+
+### 🚀 The Reason & Approach
+We developed a programmatic time-series visualization script in Python using `Matplotlib` and `Seaborn`. By converting our MySQL observation dates into continuous chronological datetime objects, we mapped the monthly retail price trajectory of our core agricultural indicator from 2015 through 2026. This provides a clear, high-resolution diagnostic window into long-term market dynamics.
+
+---
+
+### 📊 Reading the Temporal Trend Visualization
+
+As shown in the output chart below, the time-series analysis of maize retail prices reveals critical structural insights:
+
+1. **Long-Term Secular Drift (2015–2026)**: 
+   The trend demonstrates a clear upward structural drift over the decade. While baseline prices hovered between **KES 25 and KES 40 per Kg** during the 2015–2018 window, the structural baseline steadily shifted upward, with recent years (2022–2026) regularly establishing floors above **KES 40 to KES 45 per Kg**.
+   
+2. **High-Frequency Intra-Year Seasonality**: 
+   The line chart exposes sharp, highly consistent intra-year sawtooth oscillations. Prices reliably trough during mid-year harvest periods and surge sharply toward year-end or pre-harvest lean seasons, proving that short-term cyclicality is a dominant property of the series.
+
+3. **Escalating Amplitude & Macro Shocks**: 
+   Noticeable structural breaks occur post-2020, where the magnitude of price spikes intensified significantly—breaking past **KES 60/Kg** in 2021, 2023, and peaking near **KES 68/Kg** in 2024–2025. This captures broader macroeconomic cost pressures and regional supply shocks over recent years.
+
+![Temporal Trend Analysis Output](./output_temporal_trend.png)
