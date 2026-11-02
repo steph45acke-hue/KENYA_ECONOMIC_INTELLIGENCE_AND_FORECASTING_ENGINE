@@ -370,7 +370,7 @@ As shown in the output below for our core agricultural indicator (`MAIZE_RETAIL_
    A low skewness value close to zero confirms that the distribution adheres closely to a normal, unskewed bell curve.
 
 ![Univariate Statistical Profiling Output](./Screenshot%20(320).png)
-## Phase 4B: Temporal Trend & Time-Series Level Analysis
+## Phase 3B: Temporal Trend & Time-Series Level Analysis
 
 ### 💡 The Problem We Solved
 Economic and agricultural commodities are rarely static; they experience continuous shifts driven by underlying macroeconomic trends, inflationary pressures, and multi-year supply cycles. Without visualizing the actual price levels over a continuous multi-year timeline, it is impossible to identify persistent periods of structural increase, baseline drift, or multi-year volatility shifts.
