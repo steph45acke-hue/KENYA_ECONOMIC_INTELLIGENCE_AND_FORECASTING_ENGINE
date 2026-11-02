@@ -340,4 +340,35 @@ The chronological scatter plot maps retail maize prices from 2015 through 2026, 
 3. **Risk Management & Data Quality Assurance**: 
    By programmatically flagging these outliers, the forecasting engine ensures that downstream machine learning models do not mistake structural market crises for normal cyclical behavior, ensuring cleaner predictive modeling and robust economic intelligence.
 
-![Macroeconomic Anomaly Detection Scatter Plot](./output%206.png)
+![Macroeconomic Anomaly Detection Scatter Plot](./output%206.png)t
+
+## Phase 3A: Univariate Statistical Profiling & Data Quality Audit
+
+### 💡 The Problem We Solved
+Before building any forecasting models, an economic intelligence engine must establish a rigorous statistical baseline for every target series. Raw data can contain hidden gaps, missing timelines, or distributional biases that distort downstream machine learning models. Without a structured univariate audit, anomalies or data incompleteness go unnoticed, undermining the reliability of the entire pipeline.
+
+### 🚀 The Reason & Approach
+We developed a programmatic profiling script in Python that queries historical data directly from our MySQL database, handles missingness checks dynamically, and computes essential distributional metrics (such as central tendencies, dispersion, quantiles, and skewness). This ensures complete data integrity and transparency before moving to temporal modeling.
+
+---
+
+### 📊 Reading the Univariate Statistical Profile
+
+As shown in the output below for our core agricultural indicator (`MAIZE_RETAIL_PRICE_KG`), the profiling engine successfully computes the following metrics:
+
+1. **Completeness & Count (`Count (N)` = 132, `Missing %` = 0.0%)**: 
+   Verifies that the series contains a robust sample size of 132 monthly observations with zero missing values (`Missing Count` = 0), confirming 100% data integrity across the historical timeline.
+   
+2. **Central Tendency (`Mean` = 44.96, `Median` = 45.07)**: 
+   Shows a nearly identical mean and median retail price of approximately **KES 45.00 per Kg**, reflecting a balanced, symmetrical distribution over the long term.
+
+3. **Dispersion & Range (`Std Dev` = 8.98, `Min` = 25.12, `Max` = 67.04)**: 
+   Captures the volatility spread, showing that retail maize prices range from a low of **KES 25.12/Kg** up to a peak of **KES 67.04/Kg**, with a standard deviation of **8.98**.
+
+4. **Quartile Distribution (`25% (Q1)` = 38.97, `75% (Q3)` = 50.90)**: 
+   Indicates that half of all historical monthly retail prices fall compactly between **KES 38.97 and KES 50.90 per Kg**.
+
+5. **Distribution Symmetry (`Skewness` = 0.08)**: 
+   A low skewness value close to zero confirms that the distribution adheres closely to a normal, unskewed bell curve.
+
+![Univariate Statistical Profiling Output](./Screenshot%20(320).png)
