@@ -347,8 +347,6 @@ The chronological scatter plot maps retail maize prices from 2015 through 2026, 
 ### 💡 The Problem We Solved
 Before building any forecasting models, an economic intelligence engine must establish a rigorous statistical baseline for every target series. Raw data can contain hidden gaps, missing timelines, or distributional biases that distort downstream machine learning models. Without a structured univariate audit, anomalies or data incompleteness go unnoticed, undermining the reliability of the entire pipeline.
 
-### 🚀 The Reason & Approach
-We developed a programmatic profiling script in Python that queries historical data directly from our MySQL database, handles missingness checks dynamically, and computes essential distributional metrics (such as central tendencies, dispersion, quantiles, and skewness). This ensures complete data integrity and transparency before moving to temporal modeling.
 
 ---
 
@@ -377,10 +375,7 @@ As shown in the output below for our core agricultural indicator (`MAIZE_RETAIL_
 ### 💡 The Problem We Solved
 Economic and agricultural commodities are rarely static; they experience continuous shifts driven by underlying macroeconomic trends, inflationary pressures, and multi-year supply cycles. Without visualizing the actual price levels over a continuous multi-year timeline, it is impossible to identify persistent periods of structural increase, baseline drift, or multi-year volatility shifts.
 
-### 🚀 The Reason & Approach
-We developed a programmatic time-series visualization script in Python using `Matplotlib` and `Seaborn`. By converting our MySQL observation dates into continuous chronological datetime objects, we mapped the monthly retail price trajectory of our core agricultural indicator from 2015 through 2026. This provides a clear, high-resolution diagnostic window into long-term market dynamics.
 
----
 
 ### 📊 Reading the Temporal Trend Visualization
 
