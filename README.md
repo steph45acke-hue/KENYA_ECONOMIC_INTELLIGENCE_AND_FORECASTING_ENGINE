@@ -441,3 +441,18 @@ To solve this, we implemented an automated interquartile range (IQR) outlier det
 * **Validated Baseline Bounds**: The diagnostic successfully mapped the operational spread, establishing a median price of ~45 KES/Kg with an Interquartile Range (IQR) bounded between 39 KES/Kg (Q1) and 51 KES/Kg (Q3).
 * **Zero Artifact Distortion**: Using strict $1.5\times\text{IQR}$ upper and lower fences, the audit identified **zero artificial outliers**. This solves a core data hygiene problem by confirming that historical highs and lows follow natural, organic market cycles rather than corrupting data anomalies.
 * **Distribution Confidence**: The KDE curve proves that price frequencies are well-behaved and centered cleanly, giving us high confidence to proceed directly into temporal stationarity and forecasting stages without requiring artificial data clipping or smoothing.
+
+### Phase 5C: Temporal Analysis & Structural Trend Extraction (Stage 36)
+
+#### The Analytical Challenge
+Raw agricultural commodity series are heavily distorted by seasonal spikes (lean periods) and drops (harvest gluts). For an economic intelligence engine, the core risk is: **How do we strip away high-frequency seasonal noise to isolate the true, long-term macroeconomic price trajectory and measure shifting volatility?**
+
+#### The Analytical Solution
+To solve this, we implemented a rolling window computation pipeline within our notebook, calculating a **12-month rolling mean** (to smooth out intra-year seasonality and expose the structural trend) alongside a **12-month rolling standard deviation** (to track dynamic market instability). A dual-layer visualization was then deployed, laying the high-amplitude raw monthly prices over a smooth, high-emphasis structural trendline.
+
+![Kenya Macroeconomic Intelligence Engine: Maize Price Temporal Trend Extraction](reports/figures/maize_temporal_trend.png)
+
+#### Engineering Results & Insights
+* **Signal Isolation**: The 12-month rolling mean successfully filters out repetitive harvest-cycle noise, revealing a smooth, consistent upward secular trend from ~35 KES/Kg in 2016 to over 55 KES/Kg by 2026.
+* **Structural Growth Path**: The smoothed red trendline provides a clean, noise-free baseline that proves long-term structural price inflation, cutting through temporary market panics or seasonal dips.
+* **Forecasting Readiness**: By successfully extracting the underlying trend and quantifying rolling volatility, the pipeline establishes the necessary temporal continuity required for upcoming stationarity testing and predictive time-series modeling stages.
