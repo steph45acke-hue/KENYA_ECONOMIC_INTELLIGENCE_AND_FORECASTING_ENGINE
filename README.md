@@ -442,7 +442,7 @@ To solve this, we implemented an automated interquartile range (IQR) outlier det
 * **Zero Artifact Distortion**: Using strict $1.5\times\text{IQR}$ upper and lower fences, the audit identified **zero artificial outliers**. This solves a core data hygiene problem by confirming that historical highs and lows follow natural, organic market cycles rather than corrupting data anomalies.
 * **Distribution Confidence**: The KDE curve proves that price frequencies are well-behaved and centered cleanly, giving us high confidence to proceed directly into temporal stationarity and forecasting stages without requiring artificial data clipping or smoothing.
 
-### Phase 5C: Temporal Analysis & Structural Trend Extraction (Stage 36)
+### Phase 5C: Temporal Analysis & Structural Trend Extraction 
 
 #### The Analytical Challenge
 Raw agricultural commodity series are heavily distorted by seasonal spikes (lean periods) and drops (harvest gluts). For an economic intelligence engine, the core risk is: **How do we strip away high-frequency seasonal noise to isolate the true, long-term macroeconomic price trajectory and measure shifting volatility?**
