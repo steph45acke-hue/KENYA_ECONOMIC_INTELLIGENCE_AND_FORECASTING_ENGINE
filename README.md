@@ -413,3 +413,16 @@ As shown in the output plot below, the ACF diagnostic reveals critical structura
    The shaded blue cone represents the 95% confidence interval bounds. Lags that extend well beyond this cone (particularly Lags 1 through 4, and Lag 11-13) confirm statistically meaningful relationships that must be explicitly incorporated into our forecasting and feature-engineering architectures.
 
 ![Autocorrelation Function (ACF) Output](./output_acf_plot.png)
+
+## Phase 5A: Univariate Analysis & Price Trend Visualization 
+
+### 1. Headline Visualization: Maize Retail Price Trend (per Kg)
+The following publication-quality chart illustrates the historical monthly retail price trajectory of maize per kilogram across Kenya, tracked from 2015 through early 2026. 
+
+![Maize Retail Price Trend](reports/figures/maize_retail_price_trend.png)
+
+### 2. Analytical Findings & Interpretation
+* **Long-Term Trend**: The series exhibits a clear upward secular trend over the decade, moving from baseline trading ranges around 25–45 KES/Kg toward elevated cyclical peaks exceeding 65 KES/Kg in recent years.
+* **Intra-Year Seasonality**: Strong, regular cyclical fluctuations are visible annually. Prices typically bottom out mid-year during harvest seasons and peak during lean periods preceding harvests.
+* **Volatility & Structural Shifts**: Amplitude volatility increases markedly post-2020, reflecting broader macroeconomic pressures, supply chain frictions, and shifting domestic input costs.
+* **Data Integrity**: Zero missing values were recorded across the active sample window, ensuring robust temporal continuity for subsequent forecasting and stationary modeling stages.
