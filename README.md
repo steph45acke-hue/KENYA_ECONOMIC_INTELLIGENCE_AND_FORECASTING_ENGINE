@@ -427,7 +427,7 @@ The following publication-quality chart illustrates the historical monthly retai
 * **Volatility & Structural Shifts**: Amplitude volatility increases markedly post-2020, reflecting broader macroeconomic pressures, supply chain frictions, and shifting domestic input costs.
 * **Data Integrity**: Zero missing values were recorded across the active sample window, ensuring robust temporal continuity for subsequent forecasting and stationary modeling stages.
 
-### B. Solving Data Integrity & Outlier Risks (Stage 35)
+### B. Solving Data Integrity & Outlier Risks 
 
 #### The Analytical Challenge
 Before feeding raw economic series into predictive models, an engineering pipeline must solve a critical risk: **How do we prove that extreme price movements are genuine macroeconomic shifts rather than data-entry errors, and how do we establish reliable statistical boundaries?**
