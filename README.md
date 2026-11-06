@@ -456,23 +456,24 @@ To solve this, we implemented a rolling window computation pipeline within our n
 * **Signal Isolation**: The 12-month rolling mean successfully filters out repetitive harvest-cycle noise, revealing a smooth, consistent upward secular trend from ~35 KES/Kg in 2016 to over 55 KES/Kg by 2026.
 * **Structural Growth Path**: The smoothed red trendline provides a clean, noise-free baseline that proves long-term structural price inflation, cutting through temporary market panics or seasonal dips.
 * **Forecasting Readiness**: By successfully extracting the underlying trend and quantifying rolling volatility, the pipeline establishes the necessary temporal continuity required for upcoming stationarity testing and predictive time-series modeling stages.
+
 ### Phase 6A: Feature Engineering & Strict Leakage Prevention 
 
 #### The Analytical Challenge
 In predictive time-series modeling, the greatest risk is **data leakage**—accidentally allowing future target information to bleed into the feature set during training. For macroeconomic agricultural forecasting, an engine that relies on unshifted rolling statistics or contemporaneous variables will produce deceptively high backtest accuracy while failing completely in live, real-world deployment.
 
 #### The Analytical Solution
-To establish absolute temporal integrity, we structured to explicitly define our forecast origin and horizon, establishing the operating rule: *At the end of month $t$, using only data genuinely available by that date, predict the target for month $t+1$*. 
+To establish absolute temporal integrity, we structured  to explicitly define our forecast origin and horizon, establishing the operating rule: *At the end of month $t$, using only data genuinely available by that date, predict the target for month $t+1$*. 
 
- we implemented a rigorous **1-month forward shift (`.shift(1)`)** on the target series *before* calculating any temporal attributes, lags, or rolling windows. This guarantees that all historical indicators (such as 12-month rolling means, month-over-month price momentum, and year-on-year baselines) are computed exclusively from past information available at the forecast origin.
+we implemented a rigorous **1-month forward shift (`.shift(1)`)** on the target series *before* calculating any temporal attributes, lags, or rolling windows. This guarantees that all historical indicators (such as 12-month rolling means, month-over-month price momentum, and year-on-year baselines) are computed exclusively from past information available at the forecast origin.
 
 #### Execution Screenshots & Output Verification
 
-![Forecast Origin Definition](Screenshot (324).png)
-*( Successfully establishing forecast origin, loading 132 raw historical observations from 2015 to 2025 via MySQL.)*
+![Forecast Origin Definition](Screenshot%20(324).png)
+ Successfully establishing forecast origin, loading 132 raw historical observations from 2015 to 2025 via MySQL.)*
 
-![Feature Dataset Output](Screenshot (325).png)
-*(Output console confirming successful feature generation, dropping the 12-month initialization warm-up window, and outputting 120 pristine, leakage-free rows with 15 engineered attributes.)*
+![Feature Dataset Output](Screenshot%20(325).png)
+ Output console confirming successful feature generation, dropping the 12-month initialization warm-up window, and outputting 120 pristine, leakage-free rows with 15 engineered attributes.)*
 
 #### Engineering Results & Insights
 * **Secure Database Ingestion**: Loaded historical retail maize price observations securely from the local MySQL relational schema (`kenya_economic_db`).
