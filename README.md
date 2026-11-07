@@ -594,14 +594,10 @@ We built and deployed a fully interactive web application (`app.py`) powered by 
 
 #### Interface Previews
 
-<div align="center">
-  <img src="Screenshot (331).jpg" width="48%" alt="Linear Regression Baseline Dashboard">
-  <img src="Screenshot (333).jpg" width="48%" alt="Ridge Regularization Metrics">
-</div>
-<p><em>(Interactive dashboard snapshots illustrating live out-of-sample error metrics and model selection panels.)</em></p>
+| Linear Regression Baseline Dashboard | Ridge Regularization Metrics |
+| :---: | :---: |
+| ![Linear Regression Dashboard](Screenshot%20(331).png) | ![Ridge Metrics](Screenshot%20(333).png) |
 
-<div align="center">
-  <img src="Screenshot (335).jpg" width="48%" alt="Tuned Random Forest Forecast View">
-  <img src="Screenshot (336).jpg" width="48%" alt="Scenario Simulation Metrics">
-</div>
-<p><em>(Tuned Random Forest out-of-sample evaluations and real-time scenario simulation output cards.)</em></p>
+| Tuned Random Forest Forecast View | Scenario Simulation Metrics |
+| :---: | :---: |
+| ![Random Forest View](Screenshot%20(335).png) | ![Scenario Simulation](Screenshot%20(336).png) |
