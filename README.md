@@ -1,4 +1,9 @@
 # Kenyan Macroeconomic Intelligence & Agricultural Forecasting Engine
+<div align="center">
+  <img src="bunner.png" alt="Kenya Economic Intelligence Engine Banner" width="100%">
+</div>
+
+# Kenya Economic Intelligence & Forecasting Engine
 
 ## 1. Project Description
 At its core, this project is a production-grade economic intelligence and predictive modeling engine built to decode the dynamics of maize pricing across Kenya. Spanning a rich 11-year panel dataset (2015–2025) across key economic hubs—including Nairobi, Nakuru, Eldoret, Kisumu, and Mombasa—this system is designed to embrace real-world data friction. Instead of relying on sanitized, pristine datasets, it ingests multi-agency institutional data intentionally laced with missing values, extreme typos, and structural irregularities to mirror the true operational complexities of developing-market data engineering.
