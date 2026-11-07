@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sqlalchemy import create_engine
 from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
@@ -22,37 +21,18 @@ Select models and adjust economic scenario inputs in the sidebar to simulate for
 """)
 st.divider()
 
-# --- 2. Data Loading & Pipeline Execution ---
+# --- 2. Data Loading & Pipeline Execution (Cloud-Optimized CSV Loader) ---
 @st.cache_data
 def load_and_preprocess_data():
-    # Database Connection
-    engine = create_engine("mysql+pymysql://root:stephen0111301468@localhost/kenya_economic_db")
-    query = """
-        SELECT o.observation_month, o.value, s.series_code
-        FROM economic_observations o
-        JOIN series s ON o.series_id = s.series_id
-    """
-    df_all = pd.read_sql(query, con=engine)
-    df_all['observation_month'] = pd.to_datetime(df_all['observation_month'])
-
-    # Pivot to wide format
-    df_wide = df_all.pivot(index='observation_month', columns='series_code', values='value').reset_index()
-    df_wide = df_wide.sort_values('observation_month').reset_index(drop=True)
-
-    # Anti-leakage shift (1-month lag)
-    predictor_cols = ['CPI_INDEX', 'EXCHANGE_RATE_USD_KES', 'CENTRAL_BANK_RATE']
-    for col in predictor_cols:
-        df_wide[f'{col}_lag1'] = df_wide[col].shift(1)
-    df_wide['MAIZE_RETAIL_PRICE_KG_lag1'] = df_wide['MAIZE_RETAIL_PRICE_KG'].shift(1)
-
-    # Drop NaNs from warm-up shift
-    df_model_ready = df_wide.dropna().reset_index(drop=True)
+    # Read from preprocessed dataset exported for cloud deployment
+    df_model_ready = pd.read_csv("economic_data_ready.csv")
+    df_model_ready['observation_month'] = pd.to_datetime(df_model_ready['observation_month'])
     return df_model_ready
 
 try:
     df_model_ready = load_and_preprocess_data()
 except Exception as e:
-    st.error(f"Failed to connect to MySQL database or load data: {e}")
+    st.error(f"Failed to load dataset: {e}. Please ensure 'economic_data_ready.csv' is uploaded to your repository.")
     st.stop()
 
 # --- 3. Feature Selection & Chronological Train/Test Split ---
