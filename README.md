@@ -479,3 +479,23 @@ we implemented a rigorous **1-month forward shift (`.shift(1)`)** on the target 
 * **Secure Database Ingestion**: Loaded historical retail maize price observations securely from the local MySQL relational schema (`kenya_economic_db`).
 * **Controlled Feature Transformation**: Generated clean structural features including calendar attributes, multi-step lags ($1, 2, 3, 6, 12$), rolling volatility metrics, and momentum indicators.
 * **Warm-Up Management**: Successfully trimmed the 12-month initialization window, leaving a robust, leakage-free dataset of 120 fully-engineered rows ready for modeling.
+
+### Phase 6A: Feature Engineering & Strict Leakage Prevention (Stages 42–43)
+
+#### The Analytical Challenge
+In predictive time-series modeling, the greatest risk is **data leakage**—accidentally allowing future target information to bleed into the feature set during training. For macroeconomic agricultural forecasting, an engine that relies on unshifted rolling statistics or contemporaneous variables will produce deceptively high backtest accuracy while failing completely in live, real-world deployment.
+
+#### The Analytical Solution
+To establish absolute temporal integrity, we structured to explicitly define our forecast origin and horizon, establishing the operating rule: *At the end of month $t$, using only data genuinely available by that date, predict the target for month $t+1$*. 
+
+ we implemented a rigorous **1-month forward shift (`.shift(1)`)** on the target series *before* calculating any temporal attributes, lags, or rolling windows. This guarantees that all historical indicators (such as 12-month rolling means, month-over-month price momentum, and year-on-year baselines) are computed exclusively from past information available at the forecast origin.
+
+#### Visual Execution Proof & Feature Alignment
+
+![Leakage-Free Feature Alignment](output_feature_alignment.png)
+ Visualizing the actual retail price series ($t$, solid blue) against the strictly shifted safe lag ($t-1$, dashed orange) and the 12-month rolling mean (solid green). Notice how the orange dashed line perfectly tracks past price movements without peaking into contemporaneous target values, confirming absolute zero data leakage.)*
+
+#### Engineering Results & Insights
+* **Secure Database Ingestion**: Loaded 132 historical retail maize price observations (2015–2025) securely from the local MySQL relational schema (`kenya_economic_db`).
+* **Controlled Feature Transformation**: Generated clean structural features including calendar attributes, multi-step lags ($1, 2, 3, 6, 12$), rolling volatility metrics, and momentum indicators.
+* **Warm-Up Management**: Successfully trimmed the 12-month initialization window, leaving a robust, leakage-free dataset of 120 fully-engineered rows ready for modeling.
