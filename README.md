@@ -480,7 +480,7 @@ we implemented a rigorous **1-month forward shift (`.shift(1)`)** on the target 
 * **Controlled Feature Transformation**: Generated clean structural features including calendar attributes, multi-step lags ($1, 2, 3, 6, 12$), rolling volatility metrics, and momentum indicators.
 * **Warm-Up Management**: Successfully trimmed the 12-month initialization window, leaving a robust, leakage-free dataset of 120 fully-engineered rows ready for modeling.
 
-### Phase 6A: Feature Engineering & Strict Leakage Prevention (Stages 42–43)
+### Phase 6B: Feature Engineering & Strict Leakage Prevention 
 
 #### The Analytical Challenge
 In predictive time-series modeling, the greatest risk is **data leakage**—accidentally allowing future target information to bleed into the feature set during training. For macroeconomic agricultural forecasting, an engine that relies on unshifted rolling statistics or contemporaneous variables will produce deceptively high backtest accuracy while failing completely in live, real-world deployment.
