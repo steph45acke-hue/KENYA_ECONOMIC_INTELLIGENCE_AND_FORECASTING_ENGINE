@@ -537,3 +537,23 @@ Evaluating a time-series model on random data splits introduces look-ahead bias 
 #### Engineering Results & Insights
 * **Trend Tracking & Responsiveness**: The baseline model exhibits strong alignment with market directionality, successfully capturing price surges and deflationary troughs across the 2024–2025 test span.
 * **Foundation for Advanced Modeling**: While the linear baseline provides a solid structural benchmark, residual variance during sharp shocks highlights the necessity for advanced non-linear architectures in subsequent project phases.
+
+### Phase 6E: Advanced Modeling & Out-of-Sample Forecast Comparison
+
+#### The Analytical Challenge
+While our baseline Linear Regression established a solid initial trend tracker, real-world agricultural commodity prices are influenced by complex multicollinearity among macroeconomic indicators (such as consumer price indices and exchange rates) as well as non-linear seasonal shocks. To improve predictive accuracy and test algorithmic robustness, we deployed regularized linear modeling and non-linear ensemble methods across the 2024–2025 unseen evaluation horizon.
+
+#### The Analytical Solution
+* **Model Diversification**: Evaluated three distinct learning paradigms side-by-side: an unconstrained **Linear Baseline**, an L2-penalized **Ridge Regression** ($\alpha=10.0$) designed to control coefficient variance, and a non-linear **Random Forest Regressor** (100 estimators, max depth of 5) to capture hierarchical feature interactions.
+* **Leakage-Free Backtesting**: Maintained strict temporal boundaries by applying our 1-month lag structure (`shift(1)`) across all features, ensuring zero future information contamination during out-of-sample generation.
+
+#### Execution Proof & Output Verification
+
+<img src="output_advanced_forecast_comparison.png" width="100%" alt="Advanced Out-of-Sample Forecast Comparison">
+<p><em>(Advanced Out-of-Sample Forecast Visualization (2024–2025)[cite: 2]: Compares actual Kenyan retail maize prices[cite: 2] (solid blue line with circular markers[cite: 2]) against the Linear Baseline[cite: 2] (orange dashed crosses[cite: 2]), Ridge Regression[cite: 2] (green dash-dot line[cite: 2]), and Random Forest Regressor[cite: 2] (red dotted squares[cite: 2]). The chart captures distinct behavioral responses across models during sharp market turning points.)*</em></p>
+
+#### Engineering Results & Insights
+* **Linear vs. Ridge Convergence**: The Ridge Regression trajectory mirrors the Linear Baseline almost identically. This indicates that multicollinearity among our macroeconomic features did not introduce severe coefficient explosion, keeping the penalized linear parameters stable.
+* **Macroeconomic Trend Tracking**: Both linear models demonstrate high sensitivity to broad market directionality, successfully tracking major price escalations (such as the early 2024 and mid-2025 surges) and structural troughs.
+* **Random Forest Smoothing & Underfitting Trade-Off**: The Random Forest Regressor (red dotted line) exhibits a flatter, more conservative response curve. While its maximum depth restriction ($max\_depth=5$) successfully prevents overfitting to high-frequency monthly volatility, it dampens peak price responsiveness, resulting in under-forecasts during sharp seasonal spikes.
+* **Strategic Next Steps**: The performance divergence underscores the trade-off between parametric trend-following models and non-linear tree ensembles, setting the stage for hyperparameter tuning and model ensembling in subsequent optimization phases.
