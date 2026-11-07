@@ -499,3 +499,24 @@ To establish absolute temporal integrity, we structured to explicitly define our
 * **Secure Database Ingestion**: Loaded 132 historical retail maize price observations (2015–2025) securely from the local MySQL relational schema (`kenya_economic_db`).
 * **Controlled Feature Transformation**: Generated clean structural features including calendar attributes, multi-step lags ($1, 2, 3, 6, 12$), rolling volatility metrics, and momentum indicators.
 * **Warm-Up Management**: Successfully trimmed the 12-month initialization window, leaving a robust, leakage-free dataset of 120 fully-engineered rows ready for modeling.
+
+### Phase 6C: External Predictor Audit & Wide-Format Integration
+
+#### The Analytical Challenge
+Integrating external macroeconomic variables—such as consumer price inflation, foreign exchange rates, and central bank interest rates—into a predictive time-series workflow requires strict temporal controls. If raw, unshifted economic indicators are merged directly alongside the target variable, models will inadvertently access contemporaneous or future data points, violating causal integrity and leading to overfitted backtest evaluations.
+
+#### The Analytical Solution
+* **Database Predictor Audit**: We executed a relational query across our MySQL database (`kenya_economic_db`) to verify the completeness, date ranges, and alignment of all candidate economic indicators[cite: 3].
+* **Wide Matrix Pivoting & Lagging**: We transformed our normalized vertical observations into a structured wide matrix and enforced a strict **1-month forward shift (`.shift(1)`)** across every external macroeconomic predictor (`CPI_INDEX`, `EXCHANGE_RATE_USD_KES`, and `CENTRAL_BANK_RATE`) alongside our autoregressive target feature (`MAIZE_RETAIL_PRICE_KG`)[cite: 2]. 
+
+#### Execution Proof & Output Verification
+
+![External Predictor Audit Output](Screenshot_329.png)
+*(Audit Verification Output[cite: 3]: Demonstrates that all four core macroeconomic series maintain exactly 132 synchronized observation records spanning identically from January 2015 to December 2025[cite: 3], ensuring zero missing temporal gaps prior to feature merging.)*
+
+![Model-Ready Dataset Output](Screenshot_328.png)
+*(Wide Integration & Shifting Output[cite: 2]: Displays the final model-ready dataset structure after dropping the single warm-up NaN row resulting from the forward shift[cite: 2]. The resulting shape of 131 synchronized rows confirms that historical retail prices and lagged macroeconomic indicators like CPI and exchange rates are precisely aligned month-by-month up to December 2025[cite: 2].)*
+
+#### Engineering Results & Insights
+* **Synchronized Schema Transformation**: Successfully pivoted normalized database rows into a clean wide-format panel dataset while preserving absolute chronological sorting[cite: 2].
+* **Guaranteed Look-Ahead Prevention**: Established that at any given forecast origin month $t$, the integrated feature space exposes the model strictly to realized past macroeconomic conditions ($t-1$)[cite: 2], establishing a robust foundation for downstream predictive modeling.
