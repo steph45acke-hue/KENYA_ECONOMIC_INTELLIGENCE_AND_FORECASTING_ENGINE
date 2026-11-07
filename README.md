@@ -576,3 +576,32 @@ Evaluating scalar error metrics (such as MAE and RMSE) provides a high-level sum
 * **Autoregressive Dominance**: Feature importance rankings reveal that the 1-month lagged retail maize price (`MAIZE_RETAIL_PRICE_KG_lag1`) overwhelmingly drives predictive outcomes, accounting for nearly 80% of the model's total importance score.
 * **Macroeconomic Feature Contributions**: Exchange rate dynamics (`EXCHANGE_RATE_USD_KES_lag1`) and consumer price index trends (`CPI_INDEX_lag1`) provide secondary structural context, while the Central Bank Rate (`CENTRAL_BANK_RATE_lag1`) records the smallest relative weight.
 * **Error Distribution & Volatility Clusters**: The residual error plot indicates that both models experience periodic divergence during rapid seasonal shifts (notably mid-2024 and early 2025), where sharp price movements amplify under-forecasting margins.
+
+### Phase 6G: Interactive Web Application & Cloud Deployment
+
+#### The Engineering Challenge
+Transitioning an analytical forecasting engine from a static Python notebook to an accessible, production-grade web application requires an interactive presentation layer. Stakeholders and portfolio reviewers need the ability to dynamically test model outputs, tweak macroeconomic scenarios in real-time, and inspect diagnostic performance without running local code environments.
+
+#### The Streamlit Solution
+We built and deployed a fully interactive web application (`app.py`) powered by Streamlit and hosted live on Streamlit Community Cloud. The interface bridges data pipeline logic with user-driven scenario controls, featuring:
+* **Dynamic Model Selector**: Switch seamlessly between the Linear Regression Baseline, Ridge Regularization, and the Tuned Random Forest Regressor.
+* **Macroeconomic Scenario Sliders**: Adjust live percentage shifts for consumer price index (CPI), USD/KES exchange rates, and the Central Bank Rate (CBR) to simulate immediate forward-looking price impacts.
+* **Real-Time Performance Metrics**: Track out-of-sample MAE, RMSE, and next-month simulated price deltas instantly.
+* **Multi-Tab Diagnostics**: Explore interactive forecast plots, feature importance weights, and residual error tracking across tabs.
+
+#### Live Application & Verification
+* **Live Cloud App URL**: [Kenya Economic Intelligence & Forecasting Engine](https://steph45acke-hue-kenya-economic-intelligence-and-fore-app-rnw98u.streamlit.app)
+
+#### Interface Previews
+
+<div align="center">
+  <img src="Screenshot (331).jpg" width="48%" alt="Linear Regression Baseline Dashboard">
+  <img src="Screenshot (333).jpg" width="48%" alt="Ridge Regularization Metrics">
+</div>
+<p><em>(Interactive dashboard snapshots illustrating live out-of-sample error metrics and model selection panels.)</em></p>
+
+<div align="center">
+  <img src="Screenshot (335).jpg" width="48%" alt="Tuned Random Forest Forecast View">
+  <img src="Screenshot (336).jpg" width="48%" alt="Scenario Simulation Metrics">
+</div>
+<p><em>(Tuned Random Forest out-of-sample evaluations and real-time scenario simulation output cards.)</em></p>
