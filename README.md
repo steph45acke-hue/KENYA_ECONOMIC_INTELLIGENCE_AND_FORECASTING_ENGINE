@@ -519,3 +519,21 @@ Integrating external macroeconomic variables—such as consumer price inflation,
 #### Engineering Results & Insights
 * **Synchronized Schema Transformation**: Successfully pivoted normalized database rows into a clean wide-format panel dataset while preserving absolute chronological sorting.
 * **Guaranteed Look-Ahead Prevention**: Established that at any given forecast origin month $t$, the integrated feature space exposes the model strictly to realized past macroeconomic conditions ($t-1$), establishing a robust foundation for downstream predictive modeling.
+
+### Phase 6D: Chronological Train-Test Split & Baseline Model Visualization
+
+#### The Analytical Challenge
+Evaluating a time-series model on random data splits introduces look-ahead bias and invalidates performance metrics. To construct a rigorous, realistic backtest, we must enforce a strict chronological split that isolates unseen future periods—specifically testing how well our model generalizes to the 2024–2025 out-of-sample window without any exposure to future target trends during training.
+
+#### The Analytical Solution
+* **Chronological Partitioning**: We reserved the final 24 months of our 131-row dataset (spanning January 2024 to December 2025) strictly for out-of-sample evaluation, training our baseline Linear Regression model exclusively on historical data prior to 2024.
+* **Leakage-Free Validation**: By combining our autoregressive lag feature (`MAIZE_RETAIL_PRICE_KG_lag1`) with lagged macroeconomic predictors (`CPI_INDEX_lag1`, `EXCHANGE_RATE_USD_KES_lag1`, and `CENTRAL_BANK_RATE_lag1`), the baseline regression tracks directional macroeconomic momentum while respecting absolute temporal boundaries.
+
+#### Execution Proof & Output Verification
+
+<img src="output_baseline_forecast.png" width="100%" alt="Baseline Out-of-Sample Forecast">
+<p><em>(Baseline Out-of-Sample Forecast Visualization (2024–2025): Compares the actual retail maize prices (solid blue line with circular markers) against our baseline linear regression predictions (dashed orange line with cross markers). The visualization demonstrates that the model effectively tracks macroeconomic trend directions and cyclical shifts across the 24-month unseen test horizon, capturing major market turning points while providing a reliable quantitative benchmark for out-of-sample error evaluation.)*</em></p>
+
+#### Engineering Results & Insights
+* **Trend Tracking & Responsiveness**: The baseline model exhibits strong alignment with market directionality, successfully capturing price surges and deflationary troughs across the 2024–2025 test span.
+* **Foundation for Advanced Modeling**: While the linear baseline provides a solid structural benchmark, residual variance during sharp shocks highlights the necessity for advanced non-linear architectures in subsequent project phases.
