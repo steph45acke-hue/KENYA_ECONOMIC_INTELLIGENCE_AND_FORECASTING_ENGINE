@@ -601,3 +601,55 @@ We built and deployed a fully interactive web application (`app.py`) powered by 
 | Tuned Random Forest Forecast View | Scenario Simulation Metrics |
 | :---: | :---: |
 | ![Random Forest View](Screenshot%20(335).png) | ![Scenario Simulation](Screenshot%20(336).png) |
+
+### Technology Stack & Architecture
+
+The Kenya Economic Intelligence & Forecasting Engine is built on a modular, production-grade data science stack designed to bridge relational data engineering, machine learning modeling, and cloud-hosted interactive web visualization.
+
+#### 1. Data Engineering & Relational Database
+* **MySQL & SQLAlchemy**: Relational database architecture (`kenya_economic_db`) engineered to store normalized time-series series data (`series` and `economic_observations`) with robust primary/foreign key constraints[cite: 1].
+* **Pandas & NumPy**: Core data manipulation frameworks utilized for wide-format pivoting, chronological sorting, and strict anti-leakage feature engineering (1-month rolling lags)[cite: 1].
+
+#### 2. Machine Learning & Predictive Modeling
+* **Scikit-Learn**: Machine learning library powering parametric and non-linear modeling pipelines:
+  * **Linear Regression Baseline**: Establishes initial trend tracking and baseline out-of-sample error bounds.
+  * **Ridge Regularization**: Implements L2 regularization to penalize multicollinearity across macroeconomic predictors.
+  * **Tuned Random Forest Regressor**: Handles non-linear feature interactions and supplies relative feature importance attribution.
+* **Evaluation Metrics**: Out-of-sample performance rigorously tracked via Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) across a 24-month test window[cite: 1].
+
+#### 3. Interactive Web Application & Cloud Deployment
+* **Streamlit**: Application framework used to construct the interactive web dashboard (`app.py`), featuring dynamic model selection sidebars, real-time macroeconomic scenario simulation sliders, and multi-tab diagnostic layouts[cite: 1].
+* **Streamlit Community Cloud**: Cloud hosting infrastructure providing continuous deployment linked directly to GitHub, serving the public portfolio application[cite: 1].
+* **Matplotlib**: Visualization engine rendering out-of-sample forecast comparisons, feature importance weights, and residual error variance charts.
+
+### How to Use the Interactive Web Application
+
+The Kenya Economic Intelligence & Forecasting Engine is designed to be fully interactive, allowing you to test predictive models, adjust macroeconomic conditions, and explore diagnostic metrics in real-time. Follow this guide to navigate the live application:
+
+#### 1. Accessing the Dashboard
+* Open the live application in any web browser using the cloud deployment URL: [Kenya Economic Intelligence & Forecasting Engine](https://steph45acke-hue-kenya-economic-intelligence-and-fore-app-rnw98u.streamlit.app).
+
+#### 2. Selecting a Forecasting Model
+* Locate the **Model & Scenario Controls** sidebar on the left side of the screen.
+* Use the **Select Forecasting Model** dropdown menu to switch between algorithms:
+  * **Linear Regression Baseline**: Fast, parametric baseline for general trend orientation.
+  * **Ridge Regularization**: Stabilized linear modeling penalizing predictor multicollinearity.
+  * **Tuned Random Forest**: Non-linear ensemble model capturing complex feature interactions.
+* Notice how the top metric cards (MAE, RMSE, and Next-Month Price) and out-of-sample plots dynamically update to reflect the performance of your chosen model.
+
+#### 3. Simulating Macroeconomic Scenarios
+* Scroll down the sidebar to the **Macroeconomic Scenario Adjustments** section.
+* Use the interactive percentage sliders to simulate forward-looking shocks to key economic indicators based on the most recent observation values:
+  * **CPI Index Shift (%)**: Adjust consumer price index assumptions from -10% to +10%.
+  * **USD/KES Exchange Rate Shift (%)**: Simulate currency depreciation or appreciation pressures.
+  * **Central Bank Rate Shift (%)**: Modify monetary policy baseline rates.
+* Observe the **Simulated Next-Month Price** card at the top, which updates instantly to show how your hypothetical economic shock alters projected retail maize prices compared to the previous month.
+
+#### 4. Exploring Multi-Tab Diagnostics
+Navigate through the three main tabs in the central workspace to audit model behavior:
+* **📉 Forecast Dashboard**: Visualizes out-of-sample predictions against actual historical retail prices across the 2024–2025 test window.
+* **📊 Feature Importances**: Displays relative weight distributions to identify which macroeconomic or lagged indicators drive the model's predictions most heavily.
+* **🔍 Residual Analysis**: Plots model error variance (actual minus predicted) over time to check for systematic bias or volatility clustering.
+
+#### 5. Inspecting Raw Data
+* Scroll to the bottom of the page and expand the **📁 View Recent Model-Ready Dataset** accordion to inspect the underlying preprocessed time-series records.
