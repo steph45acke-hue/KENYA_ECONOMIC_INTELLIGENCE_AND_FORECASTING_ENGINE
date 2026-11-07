@@ -557,3 +557,22 @@ While our baseline Linear Regression established a solid initial trend tracker, 
 * **Macroeconomic Trend Tracking**: Both linear models demonstrate high sensitivity to broad market directionality, successfully tracking major price escalations (such as the early 2024 and mid-2025 surges) and structural troughs.
 * **Random Forest Smoothing & Underfitting Trade-Off**: The Random Forest Regressor (red dotted line) exhibits a flatter, more conservative response curve. While its maximum depth restriction ($max\_depth=5$) successfully prevents overfitting to high-frequency monthly volatility, it dampens peak price responsiveness, resulting in under-forecasts during sharp seasonal spikes.
 * **Strategic Next Steps**: The performance divergence underscores the trade-off between parametric trend-following models and non-linear tree ensembles, setting the stage for hyperparameter tuning and model ensembling in subsequent optimization phases.
+
+### Phase 6F: Residual Error Analysis & Random Forest Feature Importance
+
+#### The Analytical Challenge
+Evaluating scalar error metrics (such as MAE and RMSE) provides a high-level summary of model performance, but it obscures *where* and *when* forecasting errors occur during market shocks. Furthermore, understanding which macroeconomic drivers actually govern retail maize pricing is critical for economic validation. To address this, we conducted a dual-panel diagnostic framework analyzing out-of-sample residual errors across time alongside relative feature importance weights.
+
+#### The Analytical Solution
+* **Residual Diagnostics**: Computed time-series residuals ($\text{Actual} - \text{Predicted}$) across the 2024–2025 out-of-sample window for both the Linear Baseline and the tuned Random Forest Regressor to isolate systemic under- or over-forecasting tendencies.
+* **Feature Attribution**: Extracted impurity-based feature importance scores from the trained Random Forest ensemble to quantify the relative predictive weight assigned to autoregressive price lags versus broader macroeconomic indicators.
+
+#### Execution Proof & Output Verification
+
+<img src="output_residual_and_importance_analysis.png" width="100%" alt="Residual Error and Feature Importance Analysis">
+<p><em>(Phase 6F Diagnostic Panel[cite: 3]: Top panel displays out-of-sample residual errors for the Linear Baseline (orange dashed crosses) and Tuned Random Forest (red dotted squares) relative to the zero-error axis[cite: 3]. Bottom panel illustrates the relative feature importance scores derived from the Random Forest Regressor[cite: 3].)*</em></p>
+
+#### Engineering Results & Insights
+* **Autoregressive Dominance**: Feature importance rankings reveal that the 1-month lagged retail maize price (`MAIZE_RETAIL_PRICE_KG_lag1`) overwhelmingly drives predictive outcomes, accounting for nearly 80% of the model's total importance score.
+* **Macroeconomic Feature Contributions**: Exchange rate dynamics (`EXCHANGE_RATE_USD_KES_lag1`) and consumer price index trends (`CPI_INDEX_lag1`) provide secondary structural context, while the Central Bank Rate (`CENTRAL_BANK_RATE_lag1`) records the smallest relative weight.
+* **Error Distribution & Volatility Clusters**: The residual error plot indicates that both models experience periodic divergence during rapid seasonal shifts (notably mid-2024 and early 2025), where sharp price movements amplify under-forecasting margins.
