@@ -499,7 +499,6 @@ To establish absolute temporal integrity, we structured to explicitly define our
 * **Secure Database Ingestion**: Loaded 132 historical retail maize price observations (2015–2025) securely from the local MySQL relational schema (`kenya_economic_db`).
 * **Controlled Feature Transformation**: Generated clean structural features including calendar attributes, multi-step lags ($1, 2, 3, 6, 12$), rolling volatility metrics, and momentum indicators.
 * **Warm-Up Management**: Successfully trimmed the 12-month initialization window, leaving a robust, leakage-free dataset of 120 fully-engineered rows ready for modeling.
-
 ### Phase 6C: External Predictor Audit & Wide-Format Integration
 
 #### The Analytical Challenge
@@ -511,10 +510,10 @@ Integrating external macroeconomic variables—such as consumer price inflation,
 
 #### Execution Proof & Output Verification
 
-![External Predictor Audit Output](Screenshot (329).png)
+![External Predictor Audit Output](Screenshot%20(329).png)
 *(Audit Verification Output: Demonstrates that all four core macroeconomic series maintain exactly 132 synchronized observation records spanning identically from January 2015 to December 2025, ensuring zero missing temporal gaps prior to feature merging.)*
 
-![Model-Ready Dataset Output](Screenshot (328).png)
+![Model-Ready Dataset Output](Screenshot%20(328).png)
 *(Wide Integration & Shifting Output: Displays the final model-ready dataset structure after dropping the single warm-up NaN row resulting from the forward shift. The resulting shape of 131 synchronized rows confirms that historical retail prices and lagged macroeconomic indicators like CPI and exchange rates are precisely aligned month-by-month up to December 2025.)*
 
 #### Engineering Results & Insights
